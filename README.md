@@ -1,16 +1,77 @@
-## Hi there 👋
+<h1 align="center">Atharva Mani Tripathi</h1>
 
-<!--
-**AtharvaSecurity/AtharvaSecurity** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&pause=1000&color=00FF00&center=true&vCenter=true&width=700&lines=Python+Developer;Cybersecurity+Learner;Future+Security+Researcher;Building+Projects+Daily" />
+</p>
 
-Here are some ideas to get you started:
+<p align="center">
+  <b>Class 11 Student • Python • Cybersecurity • Web Development • AI</b>
+</p>
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+---
+
+## About Me
+
+* Class 11 Commerce Student
+* Learning Python and Problem Solving
+* Exploring Cybersecurity and Networking
+* Learning Web Development
+* Interested in Artificial Intelligence
+* Building projects and improving every day
+
+---
+
+## Tech Stack
+
+<p align="center">
+<img src="https://skillicons.dev/icons?i=python,git,github,vscode,linux,html,css" />
+</p>
+
+---
+
+## Current Goals (2026)
+
+* Improve Python programming skills
+* Learn Linux fundamentals
+* Learn networking basics
+* Build useful open-source projects
+* Strengthen cybersecurity knowledge
+* Grow my GitHub portfolio
+
+---
+
+## Featured Projects
+
+### StudentPro Calculator
+
+Modern calculator built with Python featuring:
+
+* Scientific calculations
+* Commerce tools
+* History tracking
+* Clean dark interface
+
+### Python Learning Journey
+
+Repository documenting my Python learning path, experiments, and projects.
+
+---
+
+## GitHub Streak
+
+<p align="center">
+<img src="https://streak-stats.demolab.com?user=Atharva055&theme=github-dark-blue" />
+</p>
+
+---
+
+## Connect
+
+* GitHub: https://github.com/Atharva055
+* YouTube: https://youtube.com/@ByteWard
+
+---
+
+<p align="center">
+⚡ Learning something new every day ⚡
+</p>
