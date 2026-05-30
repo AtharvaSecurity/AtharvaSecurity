@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>AtharvaSecurity — WebOS Desktop</title>
+    <title>AtharvaSecurity </title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css">
     <style>
         * {
@@ -31,7 +31,7 @@
             overflow: hidden;
         }
 
-        /* Wallpaper Collection - More Options */
+        /* Wallpaper Collection */
         .wallpaper-default { background: linear-gradient(135deg, #0a0e12 0%, #1a1f2e 50%, #0a0e12 100%); }
         .wallpaper-cyberpunk { background-image: url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070&auto=format'); background-size: cover; }
         .wallpaper-neon { background-image: url('https://images.unsplash.com/photo-1515634928627-2a4e0dae3ddf?q=80&w=2070&auto=format'); background-size: cover; }
@@ -102,7 +102,7 @@
             text-shadow: 0 1px 3px rgba(0,0,0,0.5);
         }
 
-        /* Modern Taskbar */
+        /* Taskbar */
         .taskbar {
             position: fixed;
             bottom: 12px;
@@ -556,15 +556,6 @@
             to { opacity: 1; transform: translateX(-50%) translateY(0); }
         }
 
-        /* Neofetch ASCII */
-        .neofetch {
-            font-family: monospace;
-            font-size: 11px;
-            line-height: 1.4;
-            color: #30d378;
-            white-space: pre;
-        }
-
         @media (max-width: 600px) {
             .desktop-icons { grid-template-columns: repeat(4, 70px); gap: 8px; }
             .desktop-icon { width: 65px; }
@@ -579,14 +570,14 @@
 
 <div class="desktop wallpaper-default" id="desktop">
     <div class="desktop-icons">
-        <div class="desktop-icon" data-app="profile"><div class="icon-box" style="background: rgba(48,211,120,0.15);"><i class="ti ti-user-circle" style="color:#30d378;"></i></div><span>Profile</span></div>
-        <div class="desktop-icon" data-app="terminal"><div class="icon-box" style="background: rgba(56,189,248,0.15);"><i class="ti ti-terminal-2" style="color:#38bdf8;"></i></div><span>Terminal</span></div>
-        <div class="desktop-icon" data-app="files"><div class="icon-box" style="background: rgba(210,153,34,0.15);"><i class="ti ti-folder" style="color:#d2992a;"></i></div><span>Files</span></div>
-        <div class="desktop-icon" data-app="calculator"><div class="icon-box" style="background: rgba(56,189,248,0.15);"><i class="ti ti-calculator" style="color:#38bdf8;"></i></div><span>Calculator</span></div>
-        <div class="desktop-icon" data-app="skills"><div class="icon-box" style="background: rgba(163,113,247,0.15);"><i class="ti ti-code" style="color:#a371f7;"></i></div><span>Skills</span></div>
-        <div class="desktop-icon" data-app="games"><div class="icon-box" style="background: rgba(255,184,0,0.15);"><i class="ti ti-device-gamepad-2" style="color:#ffb800;"></i></div><span>Games</span></div>
-        <div class="desktop-icon" data-app="github"><div class="icon-box" style="background: rgba(255,255,255,0.1);"><i class="ti ti-brand-github" style="color:#fff;"></i></div><span>GitHub</span></div>
-        <div class="desktop-icon" data-app="youtube"><div class="icon-box" style="background: rgba(255,0,0,0.15);"><i class="ti ti-brand-youtube" style="color:#ff0000;"></i></div><span>YouTube</span></div>
+        <div class="desktop-icon" onclick="openApp('profile')"><div class="icon-box" style="background: rgba(48,211,120,0.15);"><i class="ti ti-user-circle" style="color:#30d378;"></i></div><span>Profile</span></div>
+        <div class="desktop-icon" onclick="openApp('terminal')"><div class="icon-box" style="background: rgba(56,189,248,0.15);"><i class="ti ti-terminal-2" style="color:#38bdf8;"></i></div><span>Terminal</span></div>
+        <div class="desktop-icon" onclick="openApp('files')"><div class="icon-box" style="background: rgba(210,153,34,0.15);"><i class="ti ti-folder" style="color:#d2992a;"></i></div><span>Files</span></div>
+        <div class="desktop-icon" onclick="openApp('calculator')"><div class="icon-box" style="background: rgba(56,189,248,0.15);"><i class="ti ti-calculator" style="color:#38bdf8;"></i></div><span>Calculator</span></div>
+        <div class="desktop-icon" onclick="openApp('skills')"><div class="icon-box" style="background: rgba(163,113,247,0.15);"><i class="ti ti-code" style="color:#a371f7;"></i></div><span>Skills</span></div>
+        <div class="desktop-icon" onclick="openApp('games')"><div class="icon-box" style="background: rgba(255,184,0,0.15);"><i class="ti ti-device-gamepad-2" style="color:#ffb800;"></i></div><span>Games</span></div>
+        <div class="desktop-icon" onclick="window.open('https://github.com/AtharvaSecurity','_blank')"><div class="icon-box" style="background: rgba(255,255,255,0.1);"><i class="ti ti-brand-github" style="color:#fff;"></i></div><span>GitHub</span></div>
+        <div class="desktop-icon" onclick="window.open('https://www.youtube.com/@AtharvaSecurity','_blank')"><div class="icon-box" style="background: rgba(255,0,0,0.15);"><i class="ti ti-brand-youtube" style="color:#ff0000;"></i></div><span>YouTube</span></div>
     </div>
 </div>
 
@@ -614,15 +605,15 @@
 
 <div class="start-menu" id="startMenu">
     <div class="menu-header"><div class="menu-user"><div class="user-avatar"><i class="ti ti-shield-lock"></i></div><div class="user-info"><h4>Atharva Mani Tripathi</h4><p>@AtharvaSecurity · Python Dev</p></div></div></div>
-    <div class="menu-item" data-app="profile"><i class="ti ti-user-circle"></i><span>Profile</span></div>
-    <div class="menu-item" data-app="terminal"><i class="ti ti-terminal-2"></i><span>Terminal</span></div>
-    <div class="menu-item" data-app="files"><i class="ti ti-folder"></i><span>File Explorer</span></div>
-    <div class="menu-item" data-app="calculator"><i class="ti ti-calculator"></i><span>Calculator</span></div>
-    <div class="menu-item" data-app="skills"><i class="ti ti-code"></i><span>Skills</span></div>
-    <div class="menu-item" data-app="games"><i class="ti ti-device-gamepad-2"></i><span>Games</span></div>
+    <div class="menu-item" onclick="openApp('profile'); hideStart()"><i class="ti ti-user-circle"></i><span>Profile</span></div>
+    <div class="menu-item" onclick="openApp('terminal'); hideStart()"><i class="ti ti-terminal-2"></i><span>Terminal</span></div>
+    <div class="menu-item" onclick="openApp('files'); hideStart()"><i class="ti ti-folder"></i><span>File Explorer</span></div>
+    <div class="menu-item" onclick="openApp('calculator'); hideStart()"><i class="ti ti-calculator"></i><span>Calculator</span></div>
+    <div class="menu-item" onclick="openApp('skills'); hideStart()"><i class="ti ti-code"></i><span>Skills</span></div>
+    <div class="menu-item" onclick="openApp('games'); hideStart()"><i class="ti ti-device-gamepad-2"></i><span>Games</span></div>
     <div class="menu-divider"></div>
-    <div class="menu-item" data-app="github"><i class="ti ti-brand-github"></i><span>GitHub</span></div>
-    <div class="menu-item" data-app="youtube"><i class="ti ti-brand-youtube"></i><span>YouTube</span></div>
+    <div class="menu-item" onclick="window.open('https://github.com/AtharvaSecurity','_blank'); hideStart()"><i class="ti ti-brand-github"></i><span>GitHub</span></div>
+    <div class="menu-item" onclick="window.open('https://www.youtube.com/@AtharvaSecurity','_blank'); hideStart()"><i class="ti ti-brand-youtube"></i><span>YouTube</span></div>
     <div class="menu-divider"></div>
     <div class="menu-item" id="shutdownBtn"><i class="ti ti-power"></i><span>Shut Down</span></div>
 </div>
@@ -630,13 +621,10 @@
 <div id="toast" class="toast"></div>
 
 <script>
-    // File System Simulation
+    // ========== FILE SYSTEM ==========
     let currentDirectory = '/home/atharva';
     const fileSystem = {
-        '/home/atharva': {
-            type: 'dir',
-            content: ['Documents', 'Downloads', 'Projects', 'README.md', 'hello.py', 'cybersec-notes.txt']
-        },
+        '/home/atharva': { type: 'dir', content: ['Documents', 'Downloads', 'Projects', 'README.md', 'hello.py', 'cybersec-notes.txt'] },
         '/home/atharva/Documents': { type: 'dir', content: ['resume.pdf', 'goals-2026.md', 'learning-plan.txt'] },
         '/home/atharva/Downloads': { type: 'dir', content: ['tools.zip', 'wallpapers.zip'] },
         '/home/atharva/Projects': { type: 'dir', content: ['WebOS', 'DeauthDevil', 'StudentPro-Calculator'] },
@@ -650,56 +638,143 @@
         '/home/atharva/Projects/StudentPro-Calculator': { type: 'file', content: 'StudentPro Calculator - Python calculator with dark UI' }
     };
 
-    function getFileContent(path) {
-        return fileSystem[path]?.content || 'File not found';
-    }
-
     function listDirectory(path) {
         const dir = fileSystem[path];
-        if (dir && dir.type === 'dir') {
-            return dir.content;
-        }
+        if (dir && dir.type === 'dir') return dir.content;
         return [];
     }
 
-    // Wallpaper Management
-    const wallpapers = ['default', 'cyberpunk', 'neon', 'matrix', 'space', 'mountain', 'ocean', 'forest', 'sunset', 'abstract'];
-    
-    function setWallpaper(wallpaperKey) {
-        const desktop = document.getElementById('desktop');
-        desktop.className = 'desktop';
-        desktop.classList.add(`wallpaper-${wallpaperKey}`);
-        localStorage.setItem('webos_wallpaper', wallpaperKey);
-        showToast(`🖼️ Wallpaper changed`);
+    function getFileContent(path) {
+        const file = fileSystem[path];
+        if (file && file.type === 'file') return file.content;
+        return 'File not found';
     }
 
-    function loadSavedWallpaper() {
-        const saved = localStorage.getItem('webos_wallpaper');
-        if (saved && wallpapers.includes(saved)) {
-            document.getElementById('desktop').classList.add(`wallpaper-${saved}`);
-        } else {
-            document.getElementById('desktop').classList.add('wallpaper-default');
-        }
-    }
-
-    // Window Management
+    // ========== WINDOW MANAGEMENT ==========
     let windows = {};
     let windowZ = 100;
     let windowCounter = 0;
 
-    // App Configurations
-    const appConfigs = {
-        profile: { title: "Profile", width: 400, height: 480, content: getProfileContent() },
-        terminal: { title: "Terminal", width: 550, height: 480, content: getTerminalContent() },
-        files: { title: "File Explorer", width: 450, height: 450, content: getFileExplorerContent() },
-        calculator: { title: "Calculator", width: 320, height: 480, content: getCalculatorContent() },
-        skills: { title: "Skills", width: 380, height: 450, content: getSkillsContent() },
-        games: { title: "Games", width: 450, height: 480, content: getGamesContent() },
-        github: { title: "GitHub", width: 400, height: 300, content: '<div style="text-align:center; padding:40px;"><i class="ti ti-brand-github" style="font-size: 64px; color:#30d378;"></i><p style="margin:20px 0;">Opening GitHub profile...</p><button class="start-btn" onclick="window.open(\'https://github.com/AtharvaSecurity\', \'_blank\')" style="margin-top:10px;">Open GitHub →</button></div>' },
-        youtube: { title: "YouTube", width: 400, height: 300, content: '<div style="text-align:center; padding:40px;"><i class="ti ti-brand-youtube" style="font-size: 64px; color:#ff0000;"></i><p style="margin:20px 0;">Opening YouTube channel...</p><button class="start-btn" onclick="window.open(\'https://www.youtube.com/@AtharvaSecurity\', \'_blank\')" style="margin-top:10px;">Open YouTube →</button></div>' }
-    };
+    function openApp(appId) {
+        if (windows[appId]) {
+            focusWindow(appId);
+            return;
+        }
 
-    function getProfileContent() {
+        const contents = {
+            profile: getProfileHTML(),
+            terminal: getTerminalHTML(),
+            files: getFileExplorerHTML(),
+            calculator: getCalculatorHTML(),
+            skills: getSkillsHTML(),
+            games: getGamesHTML()
+        };
+
+        const titles = {
+            profile: "Profile", terminal: "Terminal", files: "File Explorer",
+            calculator: "Calculator", skills: "Skills", games: "Games"
+        };
+
+        const widths = { profile: 400, terminal: 550, files: 450, calculator: 320, skills: 380, games: 450 };
+        const heights = { profile: 480, terminal: 480, files: 450, calculator: 480, skills: 450, games: 480 };
+
+        const win = document.createElement('div');
+        win.className = 'window';
+        win.id = `win_${appId}`;
+        win.style.width = widths[appId] + 'px';
+        win.style.height = heights[appId] + 'px';
+        win.style.left = (50 + (windowCounter * 30)) + 'px';
+        win.style.top = (50 + (windowCounter * 25)) + 'px';
+        win.style.zIndex = ++windowZ;
+
+        win.innerHTML = `
+            <div class="window-header">
+                <div class="window-title"><i class="ti ti-app-window"></i><span>${titles[appId]}</span></div>
+                <div class="window-controls">
+                    <div class="win-btn" onclick="minimizeApp('${appId}')"><i class="ti ti-minus"></i></div>
+                    <div class="win-btn close" onclick="closeApp('${appId}')"><i class="ti ti-x"></i></div>
+                </div>
+            </div>
+            <div class="window-content" id="winContent_${appId}">${contents[appId]}</div>
+        `;
+
+        document.querySelector('.desktop').appendChild(win);
+        windows[appId] = { element: win, minimized: false };
+        makeDraggable(win);
+        addToTaskbar(appId, titles[appId]);
+        focusWindow(appId);
+        windowCounter++;
+
+        if (appId === 'terminal') setTimeout(() => initTerminal(), 100);
+    }
+
+    function closeApp(appId) {
+        if (windows[appId]) {
+            windows[appId].element.remove();
+            delete windows[appId];
+            const tb = document.getElementById(`taskbar_${appId}`);
+            if (tb) tb.remove();
+        }
+    }
+
+    function minimizeApp(appId) {
+        if (windows[appId]) {
+            windows[appId].minimized = !windows[appId].minimized;
+            windows[appId].element.style.display = windows[appId].minimized ? 'none' : 'flex';
+        }
+    }
+
+    function focusWindow(appId) {
+        if (windows[appId] && !windows[appId].minimized) {
+            windows[appId].element.style.zIndex = ++windowZ;
+            document.querySelectorAll('.taskbar-item').forEach(item => item.classList.remove('active'));
+            const tb = document.getElementById(`taskbar_${appId}`);
+            if (tb) tb.classList.add('active');
+        }
+    }
+
+    function addToTaskbar(appId, title) {
+        const taskbar = document.getElementById('taskbarApps');
+        const btn = document.createElement('div');
+        btn.className = 'taskbar-item';
+        btn.id = `taskbar_${appId}`;
+        btn.innerHTML = `<i class="ti ti-app-window"></i><span>${title}</span>`;
+        btn.onclick = () => {
+            if (windows[appId]) {
+                if (windows[appId].minimized) {
+                    windows[appId].element.style.display = 'flex';
+                    windows[appId].minimized = false;
+                }
+                focusWindow(appId);
+            } else {
+                openApp(appId);
+            }
+        };
+        taskbar.appendChild(btn);
+    }
+
+    function makeDraggable(el) {
+        const header = el.querySelector('.window-header');
+        let drag = false, startX, startY, startLeft, startTop;
+        header.addEventListener('mousedown', (e) => {
+            if (e.target.closest('.window-controls')) return;
+            drag = true;
+            startX = e.clientX;
+            startY = e.clientY;
+            startLeft = parseInt(el.style.left);
+            startTop = parseInt(el.style.top);
+            e.preventDefault();
+        });
+        document.addEventListener('mousemove', (e) => {
+            if (!drag) return;
+            el.style.left = (startLeft + e.clientX - startX) + 'px';
+            el.style.top = (startTop + e.clientY - startY) + 'px';
+        });
+        document.addEventListener('mouseup', () => drag = false);
+    }
+
+    // ========== CONTENT GENERATORS ==========
+    function getProfileHTML() {
         return `
             <div style="text-align:center;">
                 <div class="profile-avatar"><i class="ti ti-shield-lock"></i></div>
@@ -712,7 +787,7 @@
                 <div class="stat-card"><div class="stat-number">3</div><div class="stat-label">Followers</div></div>
                 <div class="stat-card"><div class="stat-number">7</div><div class="stat-label">Following</div></div>
             </div>
-            <div style="background:rgba(255,255,255,0.03); border-radius: 12px; padding: 15px; margin-bottom: 15px;">
+            <div style="background:rgba(255,255,255,0.03); border-radius: 12px; padding: 15px;">
                 <h4 style="color:#30d378; margin-bottom: 10px; font-size: 13px;">🎯 2026 Goals</h4>
                 <div class="goal-item"><i class="ti ti-check" style="color:#30d378;"></i> Improve Python skills</div>
                 <div class="goal-item"><i class="ti ti-check" style="color:#30d378;"></i> Learn Linux fundamentals</div>
@@ -721,14 +796,25 @@
                 <div class="goal-item"><i class="ti ti-check" style="color:#30d378;"></i> Strengthen cybersecurity</div>
                 <div class="goal-item"><i class="ti ti-check" style="color:#30d378;"></i> Grow GitHub portfolio</div>
             </div>
-            <div style="display: flex; gap: 10px;">
-                <button class="start-btn" onclick="window.open('https://github.com/AtharvaSecurity', '_blank')" style="flex:1; justify-content:center;"><i class="ti ti-brand-github"></i> GitHub</button>
-                <button class="start-btn" onclick="window.open('https://www.youtube.com/@AtharvaSecurity', '_blank')" style="flex:1; justify-content:center;"><i class="ti ti-brand-youtube"></i> YouTube</button>
+        `;
+    }
+
+    function getTerminalHTML() {
+        return `
+            <div id="termOut" style="font-family:monospace; font-size:12px; margin-bottom:10px; max-height:350px; overflow-y:auto;">
+                <div class="terminal-line">atharva@WebOS:~$ welcome</div>
+                <div class="terminal-output">Welcome to AtharvaSecurity WebOS v4.0</div>
+                <div class="terminal-output">Type 'help' for available commands</div>
+                <div class="terminal-output">Type 'neofetch' for system info</div>
+            </div>
+            <div style="display:flex; align-items:center; gap:8px;">
+                <span style="color:#30d378; font-family:monospace;">$</span>
+                <input type="text" id="termInput" class="terminal-input" placeholder="type command..." autofocus>
             </div>
         `;
     }
 
-    function getFileExplorerContent() {
+    function getFileExplorerHTML() {
         const items = listDirectory(currentDirectory);
         return `
             <div class="file-path">📁 ${currentDirectory}</div>
@@ -746,37 +832,7 @@
         `;
     }
 
-    window.navigateTo = function(item) {
-        const newPath = `${currentDirectory}/${item}`;
-        if (fileSystem[newPath]?.type === 'dir') {
-            currentDirectory = newPath;
-            refreshFileExplorer();
-        } else if (fileSystem[newPath]?.type === 'file') {
-            showToast(`📄 Opening ${item}...`);
-            setTimeout(() => {
-                alert(`File: ${item}\n\n${fileSystem[newPath].content}`);
-            }, 100);
-        }
-    };
-
-    window.goBack = function() {
-        const parentPath = currentDirectory.split('/').slice(0, -1).join('/');
-        if (parentPath && parentPath !== '') {
-            currentDirectory = parentPath;
-        } else {
-            currentDirectory = '/home/atharva';
-        }
-        refreshFileExplorer();
-    };
-
-    function refreshFileExplorer() {
-        const winContent = document.querySelector('#winContent_files');
-        if (winContent) {
-            winContent.innerHTML = getFileExplorerContent();
-        }
-    }
-
-    function getCalculatorContent() {
+    function getCalculatorHTML() {
         return `
             <div class="calc-display">
                 <div class="calc-expr" id="calcExpr"></div>
@@ -806,30 +862,7 @@
         `;
     }
 
-    let calcVal = '', calcOp = '', calcPrev = '';
-    window.calcInput = function(b) {
-        if (b === 'C') { calcVal = ''; calcOp = ''; calcPrev = ''; updateCalcDisplay(); return; }
-        if (b === '=') {
-            if (!calcOp || calcPrev === '') return;
-            let a = parseFloat(calcPrev), bv = parseFloat(calcVal || '0'), r;
-            if (calcOp === '÷') r = a / bv;
-            else if (calcOp === '×') r = a * bv;
-            else if (calcOp === '−') r = a - bv;
-            else if (calcOp === '+') r = a + bv;
-            document.getElementById('calcExpr').textContent = `${calcPrev} ${calcOp} ${calcVal} =`;
-            calcVal = String(parseFloat(r.toFixed(10))); calcPrev = ''; calcOp = '';
-            document.getElementById('calcResult').textContent = calcVal;
-            return;
-        }
-        if (['÷', '×', '−', '+'].includes(b)) { calcPrev = calcVal || document.getElementById('calcResult').textContent; calcOp = b; calcVal = ''; document.getElementById('calcExpr').textContent = `${calcPrev} ${b}`; return; }
-        if (b === '±') { calcVal = String(-parseFloat(calcVal || document.getElementById('calcResult').textContent)); updateCalcDisplay(); return; }
-        if (b === '%') { calcVal = String(parseFloat(calcVal || document.getElementById('calcResult').textContent) / 100); updateCalcDisplay(); return; }
-        calcVal = (calcVal === '' || calcVal === '0') ? b : calcVal + b;
-        updateCalcDisplay();
-    };
-    function updateCalcDisplay() { document.getElementById('calcResult').textContent = calcVal || '0'; }
-
-    function getSkillsContent() {
+    function getSkillsHTML() {
         const skills = [
             {name:"Python", level:72, color:"#30d378"},
             {name:"Cybersecurity", level:55, color:"#f85149"},
@@ -856,18 +889,18 @@
         `;
     }
 
-    function getGamesContent() {
+    function getGamesHTML() {
         return `
             <div id="gamesContainer">
                 <div class="game-card" onclick="startSnakeGame()">
                     <h4><i class="ti ti-brand-snake"></i> Snake Game</h4>
                     <p>Classic snake game — eat food, grow longer, avoid walls</p>
                 </div>
-                <div class="game-card" onclick="startMemoryGame()">
+                <div class="game-card" onclick="showToast('🎮 Memory Game coming soon!')">
                     <h4><i class="ti ti-cards"></i> Memory Match</h4>
                     <p>Match pairs of cards — test your memory</p>
                 </div>
-                <div class="game-card" onclick="startTicTacToe()">
+                <div class="game-card" onclick="showToast('🎮 Tic Tac Toe coming soon!')">
                     <h4><i class="ti ti-grid-3x3"></i> Tic Tac Toe</h4>
                     <p>Play against yourself — X vs O</p>
                 </div>
@@ -875,24 +908,9 @@
         `;
     }
 
-    function getTerminalContent() {
-        return `
-            <div id="termOut" style="font-family:monospace; font-size:12px; margin-bottom:10px; max-height:350px; overflow-y:auto;">
-                <div class="terminal-line">atharva@WebOS:~$ welcome</div>
-                <div class="terminal-output">Welcome to AtharvaSecurity WebOS v4.0</div>
-                <div class="terminal-output">Type 'help' for available commands</div>
-                <div class="terminal-output">Type 'neofetch' for system info</div>
-            </div>
-            <div style="display:flex; align-items:center; gap:8px;">
-                <span style="color:#30d378; font-family:monospace;">$</span>
-                <input type="text" id="termInput" class="terminal-input" placeholder="type command..." autofocus>
-            </div>
-        `;
-    }
-
-    // Terminal Commands with cd, ls, cat, neofetch
+    // ========== TERMINAL ==========
     let terminalDir = '/home/atharva';
-    
+
     function processCommand(cmd) {
         const parts = cmd.trim().split(' ');
         const command = parts[0].toLowerCase();
@@ -902,7 +920,7 @@
             case 'help':
                 return 'Available: help, ls, cd, pwd, cat, whoami, neofetch, skills, games, date, clear, repo, echo';
             case 'whoami':
-                return 'atharva (Atharva Mani Tripathi) - Python Developer | Cybersecurity Learner';
+                return 'atharva (Atharva Mani Tripathi) - Python Developer | Cybersecurity Learner | Class 11 Commerce';
             case 'pwd':
                 return terminalDir;
             case 'ls':
@@ -933,7 +951,6 @@
                 return `cat: ${args[0]}: No such file`;
             case 'neofetch':
                 return `
-        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
         ⠀⠀⠀⠀⠀⢀⣤⣶⣶⣶⣦⣤⡀⠀⠀⠀⠀⠀⠀⣠⣴⣶⣶⣶⣤⡀⠀⠀⠀
         ⠀⠀⠀⠀⢠⣿⣿⣿⣿⣿⣿⣿⣿⣦⡀⠀⢀⣴⣿⣿⣿⣿⣿⣿⣿⣿⡄⠀⠀
         ⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀
@@ -946,24 +963,13 @@
         OS: WebOS v4.0 (AtharvaSecurity Edition)
         Kernel: 6.8.0-arch1-1
         Shell: bash 5.2.15
-        Terminal: WebOS Terminal
-        CPU: JavaScript V8 Engine
-        Memory: Browser RAM
         Resolution: ${window.innerWidth}x${window.innerHeight}
-        Theme: Cyberpunk Dark
-        Icons: Tabler Icons
         Uptime: ${Math.floor(performance.now() / 1000 / 60)} minutes
-        Packages: 5 core apps
-        Shell: bash
-        Editor: VS Code / WebOS Editor
-        Tools: Python, Git, Node.js
-        ─────────────────────────────────
-        🐧 "Building the future, one line at a time." 🐧
-            `;
+        🐧 "Building the future, one line at a time." 🐧`;
             case 'skills':
                 return '🐍 Python 72% | 🔒 Cybersecurity 55% | 🌐 Web Dev 60% | 🐧 Linux 48% | 🔗 Networking 40%';
             case 'games':
-                setTimeout(() => openApp('games'), 100);
+                openApp('games');
                 return 'Opening Games...';
             case 'date':
                 return new Date().toString();
@@ -972,7 +978,6 @@
             case 'echo':
                 return args.join(' ');
             case 'clear':
-                document.getElementById('termOut').innerHTML = '';
                 return 'CLEARED';
             default:
                 return `bash: ${command}: command not found. Type 'help' for options.`;
@@ -983,144 +988,107 @@
         const input = document.getElementById('termInput');
         if (!input) return;
         
-        input.addEventListener('keypress', (e) => {
+        // Remove existing listener to avoid duplicates
+        const newInput = input.cloneNode(true);
+        input.parentNode.replaceChild(newInput, input);
+        
+        newInput.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') {
-                const cmd = input.value.trim();
+                const cmd = newInput.value.trim();
                 const output = document.getElementById('termOut');
                 output.innerHTML += `<div class="terminal-line">atharva@WebOS:${terminalDir}$ ${cmd}</div>`;
                 
                 const response = processCommand(cmd);
-                if (response && response !== 'CLEARED') {
-                    output.innerHTML += `<div class="terminal-output">${response}</div>`;
-                } else if (response === 'CLEARED') {
+                if (response === 'CLEARED') {
                     output.innerHTML = '';
+                } else if (response) {
+                    output.innerHTML += `<div class="terminal-output">${response}</div>`;
                 }
                 output.scrollTop = output.scrollHeight;
-                input.value = '';
-                input.focus();
+                newInput.value = '';
+                newInput.focus();
             }
         });
-        input.focus();
+        newInput.focus();
     }
 
-    // Memory Game
-    let memoryCards = [], memoryFlipped = [], memoryLocked = false, memoryMoves = 0, memoryMatches = 0;
-    const memoryIcons = ['🐧', '🐧', '🐍', '🐍', '🔒', '🔒', '💻', '💻', '🚀', '🚀', '🎮', '🎮'];
-    
-    window.startMemoryGame = function() {
-        const container = document.getElementById('gamesContainer');
-        if (!container) return;
-        memoryCards = [...memoryIcons];
-        for (let i = memoryCards.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [memoryCards[i], memoryCards[j]] = [memoryCards[j], memoryCards[i]];
-        }
-        memoryFlipped = new Array(12).fill(false);
-        memoryLocked = false;
-        memoryMoves = 0;
-        memoryMatches = 0;
-        renderMemoryGame();
-    };
-    
-    function renderMemoryGame() {
-        const container = document.getElementById('gamesContainer');
-        container.innerHTML = `
-            <div style="text-align:center;">
-                <div class="game-score">Moves: ${memoryMoves} | Matches: ${memoryMatches}/6</div>
-                <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin:20px 0;">
-                    ${memoryCards.map((icon, i) => `
-                        <div style="aspect-ratio:1; background:${memoryFlipped[i] ? 'rgba(48,211,120,0.3)' : 'rgba(255,255,255,0.1)'}; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:24px; cursor:pointer; border:1px solid rgba(48,211,120,0.3);" onclick="flipCard(${i})">
-                            ${memoryFlipped[i] ? icon : '?'}
-                        </div>
-                    `).join('')}
-                </div>
-                <button class="start-btn" onclick="startMemoryGame()">🔄 New Game</button>
-                <button class="start-btn" onclick="location.reload()" style="margin-left:10px;">← Back</button>
-            </div>
-        `;
-    }
-    
-    window.flipCard = function(i) {
-        if (memoryLocked || memoryFlipped[i] || memoryMatches === 6) return;
-        memoryFlipped[i] = true;
-        memoryMoves++;
-        renderMemoryGame();
-        const flippedIndices = memoryFlipped.reduce((arr, val, idx) => val ? [...arr, idx] : arr, []);
-        if (flippedIndices.length === 2) {
-            memoryLocked = true;
+    // ========== FILE EXPLORER FUNCTIONS ==========
+    window.navigateTo = function(item) {
+        const newPath = `${currentDirectory}/${item}`;
+        if (fileSystem[newPath]?.type === 'dir') {
+            currentDirectory = newPath;
+            refreshFileExplorer();
+        } else if (fileSystem[newPath]?.type === 'file') {
+            showToast(`📄 Opening ${item}...`);
             setTimeout(() => {
-                if (memoryCards[flippedIndices[0]] === memoryCards[flippedIndices[1]]) {
-                    memoryMatches++;
-                    if (memoryMatches === 6) showToast('🎉 You won! Congratulations! 🎉');
-                } else {
-                    memoryFlipped[flippedIndices[0]] = false;
-                    memoryFlipped[flippedIndices[1]] = false;
-                }
-                memoryLocked = false;
-                renderMemoryGame();
-            }, 500);
+                alert(`File: ${item}\n\n${fileSystem[newPath].content}`);
+            }, 100);
         }
     };
-    
-    // Tic Tac Toe
-    let tttBoard = ['', '', '', '', '', '', '', '', ''], tttCurrent = 'X', tttActive = true;
-    
-    window.startTicTacToe = function() {
-        const container = document.getElementById('gamesContainer');
-        tttBoard = ['', '', '', '', '', '', '', '', ''];
-        tttCurrent = 'X';
-        tttActive = true;
-        renderTicTacToe();
-    };
-    
-    function renderTicTacToe() {
-        const container = document.getElementById('gamesContainer');
-        container.innerHTML = `
-            <div style="text-align:center;">
-                <div class="game-score" id="tttStatus">Player X's turn</div>
-                <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:8px; max-width:250px; margin:20px auto;">
-                    ${tttBoard.map((cell, i) => `
-                        <div style="aspect-ratio:1; background:rgba(255,255,255,0.08); border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:36px; cursor:pointer; border:1px solid rgba(48,211,120,0.3);" onclick="makeTicTacToeMove(${i})">
-                            ${cell}
-                        </div>
-                    `).join('')}
-                </div>
-                <button class="start-btn" onclick="startTicTacToe()">🔄 Reset Game</button>
-                <button class="start-btn" onclick="location.reload()" style="margin-left:10px;">← Back</button>
-            </div>
-        `;
-    }
-    
-    window.makeTicTacToeMove = function(i) {
-        if (!tttActive || tttBoard[i] !== '') return;
-        tttBoard[i] = tttCurrent;
-        const winner = checkTicTacToeWinner();
-        if (winner) {
-            document.getElementById('tttStatus').textContent = `🎉 Player ${winner} wins! 🎉`;
-            tttActive = false;
-        } else if (!tttBoard.includes('')) {
-            document.getElementById('tttStatus').textContent = "It's a tie!";
-            tttActive = false;
+
+    window.goBack = function() {
+        const parentPath = currentDirectory.split('/').slice(0, -1).join('/');
+        if (parentPath && parentPath !== '') {
+            currentDirectory = parentPath;
         } else {
-            tttCurrent = tttCurrent === 'X' ? 'O' : 'X';
-            document.getElementById('tttStatus').textContent = `Player ${tttCurrent}'s turn`;
+            currentDirectory = '/home/atharva';
         }
-        renderTicTacToe();
+        refreshFileExplorer();
+    };
+
+    function refreshFileExplorer() {
+        const winContent = document.querySelector('#winContent_files');
+        if (winContent) {
+            winContent.innerHTML = getFileExplorerHTML();
+        }
+    }
+
+    // ========== CALCULATOR ==========
+    let calcVal = '', calcOp = '', calcPrev = '';
+    
+    window.calcInput = function(b) {
+        if (b === 'C') { calcVal = ''; calcOp = ''; calcPrev = ''; updateCalcDisplay(); return; }
+        if (b === '=') {
+            if (!calcOp || calcPrev === '') return;
+            let a = parseFloat(calcPrev), bv = parseFloat(calcVal || '0'), r;
+            if (calcOp === '÷') r = a / bv;
+            else if (calcOp === '×') r = a * bv;
+            else if (calcOp === '−') r = a - bv;
+            else if (calcOp === '+') r = a + bv;
+            document.getElementById('calcExpr').textContent = `${calcPrev} ${calcOp} ${calcVal} =`;
+            calcVal = String(parseFloat(r.toFixed(10))); calcPrev = ''; calcOp = '';
+            document.getElementById('calcResult').textContent = calcVal;
+            return;
+        }
+        if (['÷', '×', '−', '+'].includes(b)) { calcPrev = calcVal || document.getElementById('calcResult').textContent; calcOp = b; calcVal = ''; document.getElementById('calcExpr').textContent = `${calcPrev} ${b}`; return; }
+        if (b === '±') { calcVal = String(-parseFloat(calcVal || document.getElementById('calcResult').textContent)); updateCalcDisplay(); return; }
+        if (b === '%') { calcVal = String(parseFloat(calcVal || document.getElementById('calcResult').textContent) / 100); updateCalcDisplay(); return; }
+        if (b === '.' && calcVal.includes('.')) return;
+        calcVal = (calcVal === '' || calcVal === '0') ? b : calcVal + b;
+        updateCalcDisplay();
     };
     
-    function checkTicTacToeWinner() {
-        const wins = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
-        for (let w of wins) {
-            const [a,b,c] = w;
-            if (tttBoard[a] && tttBoard[a] === tttBoard[b] && tttBoard[a] === tttBoard[c]) return tttBoard[a];
-        }
-        return null;
+    function updateCalcDisplay() { 
+        const result = document.getElementById('calcResult');
+        if (result) result.textContent = calcVal || '0';
     }
     
-    // Snake Game
+    window.calcCalculate = function() { 
+        // This is handled by the '=' case above
+        const equalBtn = document.querySelector('.calc-equal');
+        if (equalBtn) {
+            const onClick = equalBtn.getAttribute('onclick');
+            if (onClick) eval(onClick);
+        }
+    };
+
+    // ========== SNAKE GAME ==========
     let snakeInterval;
+    
     window.startSnakeGame = function() {
         const container = document.getElementById('gamesContainer');
+        if (!container) return;
+        
         container.innerHTML = `
             <div style="text-align:center;">
                 <div class="game-score">Score: <span id="snakeScore">0</span></div>
@@ -1141,6 +1109,7 @@
     function initSnakeGame() {
         const canvas = document.getElementById('snakeCanvas');
         if (!canvas) return;
+        
         let snake = [{x: 175, y: 175}, {x: 165, y: 175}, {x: 155, y: 175}];
         let direction = 'RIGHT';
         let food = {x: 0, y: 0};
@@ -1188,116 +1157,39 @@
             draw();
         }
         
-        document.addEventListener('keydown', (e) => {
+        const handleKey = (e) => {
             if (e.key === 'ArrowRight' && direction !== 'LEFT') direction = 'RIGHT';
             if (e.key === 'ArrowLeft' && direction !== 'RIGHT') direction = 'LEFT';
             if (e.key === 'ArrowUp' && direction !== 'DOWN') direction = 'UP';
             if (e.key === 'ArrowDown' && direction !== 'UP') direction = 'DOWN';
-        });
+        };
+        document.addEventListener('keydown', handleKey);
+        
         draw();
         if (snakeInterval) clearInterval(snakeInterval);
         snakeInterval = setInterval(update, 100);
+        
+        // Store cleanup function
+        window._cleanupSnake = () => document.removeEventListener('keydown', handleKey);
     }
 
-    // App Management
-    function openApp(appId) {
-        if (appId === 'github') { window.open('https://github.com/AtharvaSecurity', '_blank'); return; }
-        if (appId === 'youtube') { window.open('https://www.youtube.com/@AtharvaSecurity', '_blank'); return; }
-        if (windows[appId]) { focusWindow(appId); return; }
-        const cfg = appConfigs[appId];
-        if (!cfg) return;
-        const win = document.createElement('div');
-        win.className = 'window';
-        win.id = `win_${appId}`;
-        win.style.width = cfg.width + 'px';
-        win.style.height = cfg.height + 'px';
-        win.style.left = (50 + (windowCounter * 30)) + 'px';
-        win.style.top = (50 + (windowCounter * 25)) + 'px';
-        win.style.zIndex = ++windowZ;
-        win.innerHTML = `<div class="window-header"><div class="window-title"><i class="ti ti-app-window"></i><span>${cfg.title}</span></div><div class="window-controls"><div class="win-btn minimize" data-app="${appId}"><i class="ti ti-minus"></i></div><div class="win-btn close" data-app="${appId}"><i class="ti ti-x"></i></div></div></div><div class="window-content" id="winContent_${appId}">${cfg.content}</div>`;
-        document.querySelector('.desktop').appendChild(win);
-        windows[appId] = { element: win, minimized: false, title: cfg.title };
-        makeDraggable(win);
-        addToTaskbar(appId, cfg.title);
-        focusWindow(`win_${appId}`);
-        win.querySelector('.close').addEventListener('click', () => closeApp(appId));
-        win.querySelector('.minimize').addEventListener('click', () => minimizeApp(appId));
-        win.addEventListener('mousedown', () => focusWindow(`win_${appId}`));
-        windowCounter++;
-        if (appId === 'terminal') setTimeout(() => initTerminal(), 100);
+    // ========== WALLPAPER ==========
+    function setWallpaper(wallpaperKey) {
+        const desktop = document.getElementById('desktop');
+        desktop.className = 'desktop';
+        desktop.classList.add(`wallpaper-${wallpaperKey}`);
+        localStorage.setItem('webos_wallpaper', wallpaperKey);
+        showToast(`🖼️ Wallpaper changed`);
     }
 
-    function closeApp(appId) {
-        if (windows[appId]) {
-            windows[appId].element.remove();
-            delete windows[appId];
-            const tb = document.getElementById(`taskbar_${appId}`);
-            if (tb) tb.remove();
+    function loadSavedWallpaper() {
+        const saved = localStorage.getItem('webos_wallpaper');
+        if (saved) {
+            document.getElementById('desktop').classList.add(`wallpaper-${saved}`);
         }
     }
 
-    function minimizeApp(appId) {
-        if (windows[appId]) {
-            windows[appId].minimized = !windows[appId].minimized;
-            windows[appId].element.style.display = windows[appId].minimized ? 'none' : 'flex';
-            const tb = document.getElementById(`taskbar_${appId}`);
-            if (tb) tb.style.opacity = windows[appId].minimized ? '0.5' : '1';
-        }
-    }
-
-    function focusWindow(winId) {
-        const win = document.getElementById(winId);
-        if (win && win.style.display !== 'none') {
-            win.style.zIndex = ++windowZ;
-            document.querySelectorAll('.taskbar-item').forEach(item => item.classList.remove('active'));
-            const appId = winId.replace('win_', '');
-            const tb = document.getElementById(`taskbar_${appId}`);
-            if (tb) tb.classList.add('active');
-        }
-    }
-
-    function addToTaskbar(appId, title) {
-        const taskbar = document.getElementById('taskbarApps');
-        const btn = document.createElement('div');
-        btn.className = 'taskbar-item';
-        btn.id = `taskbar_${appId}`;
-        btn.dataset.app = appId;
-        btn.innerHTML = `<i class="ti ti-app-window"></i><span>${title}</span>`;
-        btn.onclick = () => {
-            const win = document.getElementById(`win_${appId}`);
-            if (win) {
-                if (windows[appId] && windows[appId].minimized) {
-                    win.style.display = 'flex';
-                    windows[appId].minimized = false;
-                }
-                focusWindow(`win_${appId}`);
-            } else if (appId !== 'github' && appId !== 'youtube') {
-                openApp(appId);
-            }
-        };
-        taskbar.appendChild(btn);
-    }
-
-    function makeDraggable(el) {
-        const header = el.querySelector('.window-header');
-        let drag = false, startX, startY, startLeft, startTop;
-        header.addEventListener('mousedown', (e) => {
-            if (e.target.closest('.window-controls')) return;
-            drag = true;
-            startX = e.clientX;
-            startY = e.clientY;
-            startLeft = parseInt(el.style.left);
-            startTop = parseInt(el.style.top);
-            e.preventDefault();
-        });
-        document.addEventListener('mousemove', (e) => {
-            if (!drag) return;
-            el.style.left = (startLeft + e.clientX - startX) + 'px';
-            el.style.top = (startTop + e.clientY - startY) + 'px';
-        });
-        document.addEventListener('mouseup', () => drag = false);
-    }
-
+    // ========== UI HELPERS ==========
     function showToast(msg) {
         const toast = document.getElementById('toast');
         toast.textContent = msg;
@@ -1305,45 +1197,64 @@
         setTimeout(() => { toast.style.display = 'none'; }, 2000);
     }
 
-    // Event Listeners
-    document.querySelectorAll('.desktop-icon').forEach(icon => {
-        icon.addEventListener('dblclick', () => { const app = icon.dataset.app; if (app) openApp(app); });
-    });
-    document.querySelectorAll('.menu-item[data-app]').forEach(item => {
-        item.addEventListener('click', () => { const app = item.dataset.app; if (app) openApp(app); document.getElementById('startMenu').classList.remove('show'); });
-    });
-    document.getElementById('startBtn').addEventListener('click', (e) => { e.stopPropagation(); document.getElementById('startMenu').classList.toggle('show'); });
-    document.getElementById('shutdownBtn').addEventListener('click', () => {
-        if (confirm('Shut down WebOS?')) {
-            showToast('🖥️ Shutting down...');
-            setTimeout(() => { document.body.innerHTML = '<div style="background:#0a0e12; width:100vw; height:100vh; display:flex; align-items:center; justify-content:center; color:#30d378; font-family:monospace;">🐧 WebOS has shut down. Refresh to restart.</div>'; }, 1500);
-        }
+    function hideStart() {
         document.getElementById('startMenu').classList.remove('show');
-    });
-    document.addEventListener('click', (e) => {
-        if (!e.target.closest('#startMenu') && !e.target.closest('#startBtn')) document.getElementById('startMenu').classList.remove('show');
-        if (!e.target.closest('#wallpaperMenu') && !e.target.closest('#wallpaperBtn')) document.getElementById('wallpaperMenu').classList.remove('show');
-    });
-    document.getElementById('wallpaperBtn').addEventListener('click', (e) => { e.stopPropagation(); document.getElementById('wallpaperMenu').classList.toggle('show'); });
-    document.querySelectorAll('.wallpaper-option').forEach(option => {
-        option.addEventListener('click', () => { setWallpaper(option.dataset.wallpaper); document.getElementById('wallpaperMenu').classList.remove('show'); });
-    });
+    }
 
-    // Clock
+    // ========== CLOCK ==========
     function updateClock() {
         const now = new Date();
         document.getElementById('clockTime').textContent = now.toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
         document.getElementById('clockDate').textContent = now.toLocaleDateString([], {weekday:'short', month:'short', day:'numeric'});
     }
+
+    // ========== EVENT LISTENERS ==========
+    document.getElementById('startBtn').addEventListener('click', (e) => {
+        e.stopPropagation();
+        document.getElementById('startMenu').classList.toggle('show');
+    });
+
+    document.getElementById('shutdownBtn').addEventListener('click', () => {
+        if (confirm('Shut down WebOS?')) {
+            showToast('🖥️ Shutting down...');
+            setTimeout(() => {
+                document.body.innerHTML = '<div style="background:#0a0e12; width:100vw; height:100vh; display:flex; align-items:center; justify-content:center; color:#30d378; font-family:monospace;">🐧 WebOS has shut down. Refresh to restart.</div>';
+            }, 1500);
+        }
+        hideStart();
+    });
+
+    document.getElementById('wallpaperBtn').addEventListener('click', (e) => {
+        e.stopPropagation();
+        document.getElementById('wallpaperMenu').classList.toggle('show');
+    });
+
+    document.querySelectorAll('.wallpaper-option').forEach(option => {
+        option.addEventListener('click', () => {
+            setWallpaper(option.dataset.wallpaper);
+            document.getElementById('wallpaperMenu').classList.remove('show');
+        });
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('#startMenu') && !e.target.closest('#startBtn')) hideStart();
+        if (!e.target.closest('#wallpaperMenu') && !e.target.closest('#wallpaperBtn')) {
+            document.getElementById('wallpaperMenu').classList.remove('show');
+        }
+    });
+
+    // Make functions global
+    window.openApp = openApp;
+    window.closeApp = closeApp;
+    window.minimizeApp = minimizeApp;
+    window.showToast = showToast;
+    window.hideStart = hideStart;
+
+    // Initialize
     updateClock();
     setInterval(updateClock, 1000);
-
     loadSavedWallpaper();
-    showToast('🐧 Welcome to WebOS v4.0! New: File Explorer, Calculator, Neofetch, cd command!');
-    
-    // Make functions global
-    window.calcCalculate = function() { const btn = document.querySelector('.calc-equal'); if(btn) btn.click(); };
-    window.openApp = openApp;
+    showToast('🐧 Welcome to WebOS v4.0! Type "help" in terminal.');
 </script>
 </body>
 </html>
