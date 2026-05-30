@@ -65,6 +65,10 @@ Repository documenting my Python learning path, experiments, and projects.
 
 ---
 
+<h2>📈 Contribution Graph</h2>
+
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=AtharvaSecurity&theme=github-dark" />
+
 ## Connect
 
 * GitHub: https://github.com/Atharva055
