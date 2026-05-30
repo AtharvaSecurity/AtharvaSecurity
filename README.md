@@ -71,7 +71,7 @@ Repository documenting my Python learning path, experiments, and projects.
 
 ## Connect
 
-* GitHub: https://github.com/Atharva055
+* GitHub: https://github.com/AtharvaSecurity
 * YouTube: https://www.youtube.com/@AtharvaSecurity
 
 ---
