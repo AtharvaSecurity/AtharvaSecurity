@@ -76,8 +76,6 @@ Repository documenting my Python learning path, experiments, and projects.
 
 ---
 
-## 🐧 My Flagship Project
-[![Experience AtharvaLinux](https://img.shields.io/badge/🐧_Experience_AtharvaLinux-Live_Desktop-00FF00?style=for-the-badge)](https://atharvasecurity.github.io)
 
 <p align="center">
 ⚡ Learning something new every day ⚡
