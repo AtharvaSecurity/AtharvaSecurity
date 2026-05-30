@@ -1,81 +1,31 @@
-<h1 align="center">Atharva Mani Tripathi</h1>
+<!--
+  ___         _                    _    ____   _____
+ / _ \       | |                  | |  / __ \ / ____|
+/ /_\ \  ___ | |_  __ _  _ __   __| | | |  | | (___
+|  _  | / _ \| __|/ _` || '_ \ / _` | | |  | |\___ \
+| | | ||  __/| |_| (_| || | | | (_| | | |__| |____) |
+\_| |_/ \___| \__|\__,_||_| |_|\__,_|  \____/|_____/
+
+                   AtharvaSecurity OS v1.0
+          "Your terminal. Your rules. Your security."
+-->
+
+# 🖥️ Welcome to **AtharvaSecurity OS**  
+> *A terminal-style experience — like Kali meets Ubuntu, built inside your README*
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&pause=1000&color=00FF00&center=true&vCenter=true&width=700&lines=Python+Developer;Cybersecurity+Learner;Future+Security+Researcher;Building+Projects+Daily" />
-</p>
-
-<p align="center">
-  <b>Class 11 Student • Python • Cybersecurity • Web Development • AI</b>
-</p>
-
----
-
-## About Me
-
-* Class 11 Commerce Student
-* Learning Python and Problem Solving
-* Exploring Cybersecurity and Networking
-* Learning Web Development
-* Interested in Artificial Intelligence
-* Building projects and improving every day
-
----
-
-## Tech Stack
-
-<p align="center">
-<img src="https://skillicons.dev/icons?i=python,git,github,vscode,linux,html,css" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=00FF00&center=true&vCenter=true&width=600&lines=Class+11+Student;Python+Developer;Cybersecurity+Learner;Building+projects+every+day" />
 </p>
 
 ---
 
-## Current Goals (2026)
+## 🐧 **OS Information**
+```bash
+$ whoami
+atharva-security
 
-* Improve Python programming skills
-* Learn Linux fundamentals
-* Learn networking basics
-* Build useful open-source projects
-* Strengthen cybersecurity knowledge
-* Grow my GitHub portfolio
+$ uname -a
+Linux AtharvaSecurity 6.11.0-kali1-amd64 #1 SMP PREEMPT_DYNAMIC ... x86_64 GNU/Linux
 
----
-
-## Featured Projects
-
-### StudentPro Calculator
-
-Modern calculator built with Python featuring:
-
-* Scientific calculations
-* Commerce tools
-* History tracking
-* Clean dark interface
-
-### Python Learning Journey
-
-Repository documenting my Python learning path, experiments, and projects.
-
----
-
-## GitHub Streak
-
-<p align="center">
-<img src="https://streak-stats.demolab.com?user=Atharva055&theme=github-dark-blue" />
-</p>
-
----
-
-<h2>📈 Contribution Graph</h2>
-
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=AtharvaSecurity&theme=github-dark" />
-
-## Connect
-
-* GitHub: https://github.com/AtharvaSecurity
-* YouTube: https://www.youtube.com/@AtharvaSecurity
-
----
-
-<p align="center">
-⚡ Learning something new every day ⚡
-</p>
+$ uptime
+01:20:20 UTC-12:00 up 1337 days, 42 min, 1 user, load average: 0.08, 0.03, 0.01
