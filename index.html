@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>AtharvaSecurity — WebOS Desktop</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            user-select: none;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        /* Desktop with Wallpaper */
+        .desktop {
+            position: fixed;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: background-image 0.3s ease;
+            overflow: hidden;
+        }
+
+        /* Wallpaper Collection */
+        .wallpaper-cyberpunk {
+            background-image: url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070&auto=format');
+        }
+        .wallpaper-neon {
+            background-image: url('https://images.unsplash.com/photo-1515634928627-2a4e0dae3ddf?q=80&w=2070&auto=format');
+        }
+        .wallpaper-matrix {
+            background-image: url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2070&auto=format');
+        }
+        .wallpaper-space {
+            background-image: url('https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?q=80&w=2113&auto=format');
+        }
+        .wallpaper-mountain {
+            background-image: url('https://images.unsplash.com/photo-1454496522488-7a8e488e8606?q=80&w=2076&auto=format');
+        }
+        .wallpaper-default {
+            background-image: linear-gradient(135deg, #0a0e12 0%, #1a1f2e 50%, #0a0e12 100%);
+        }
+
+        /* Grid Overlay */
+        .desktop::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(48,211,120,0.05) 40px),
+                              repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(48,211,120,0.05) 40px);
+            pointer-events: none;
+        }
+
+        /* Desktop Icons */
+        .desktop-icons {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, 85px);
+            gap: 12px;
+            z-index: 10;
+        }
+
+        .desktop-icon {
+            width: 80px;
+            padding: 10px 5px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: all 0.2s;
+            background: transparent;
+        }
+
+        .desktop-icon:hover {
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            transform: translateY(-2px);
+        }
+
+        .icon-box {
+            width: 50px;
+            height: 50px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            transition: all 0.2s;
+        }
+
+        .desktop-icon span {
+            font-size: 10px;
+            color: rgba(255, 255, 255, 0.95);
+            text-align: center;
+            font-weight: 500;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+        }
+
+        /* Modern Taskbar */
+        .taskbar {
+            position: fixed;
+            bottom: 12px;
+            left: 12px;
+            right: 12px;
+            height: 52px;
+            background: rgba(18, 22, 28, 0.85);
+            backdrop-filter: blur(20px);
+            border-radius: 16px;
+            border: 1px solid rgba(48, 211, 120, 0.25);
+            display: flex;
+            align-items: center;
+            padding: 0 12px;
+            gap: 8px;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .start-btn {
+            background: rgba(48, 211, 120, 0.15);
+            border: 1px solid rgba(48, 211, 120, 0.35);
+            padding: 8px 16px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .start-btn:hover {
+            background: rgba(48, 211, 120, 0.25);
+            border-color: rgba(48, 211, 120, 0.6);
+            transform: scale(1.02);
+        }
+
+        .start-btn i {
+            font-size: 18px;
+            color: #30d378;
+        }
+
+        .start-btn span {
+            color: #fff;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .taskbar-apps {
+            display: flex;
+            gap: 6px;
+            flex: 1;
+            overflow-x: auto;
+            padding: 0 8px;
+        }
+
+        .taskbar-apps::-webkit-scrollbar {
+            height: 3px;
+        }
+
+        .taskbar-item {
+            padding: 6px 14px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: all 0.15s;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.85);
+            border: 1px solid transparent;
+        }
+
+        .taskbar-item:hover {
+            background: rgba(48, 211, 120, 0.15);
+            border-color: rgba(48, 211, 120, 0.3);
+        }
+
+        .taskbar-item.active {
+            background: rgba(48, 211, 120, 0.2);
+            border-color: rgba(48, 211, 120, 0.5);
+            color: #30d378;
+        }
+
+        .taskbar-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .wallpaper-btn {
+            background: rgba(255, 255, 255, 0.08);
+            border: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: #fff;
+            transition: all 0.2s;
+        }
+
+        .wallpaper-btn:hover {
+            background: rgba(48, 211, 120, 0.3);
+            transform: scale(1.05);
+        }
+
+        .clock {
+            text-align: right;
+            padding: 0 8px;
+        }
+
+        .clock .time {
+            font-size: 13px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .clock .date {
+            font-size: 9px;
+            opacity: 0.6;
+            color: #fff;
+        }
+
+        /* Wallpaper Menu */
+        .wallpaper-menu {
+            position: fixed;
+            bottom: 70px;
+            right: 20px;
+            width: 200px;
+            background: rgba(22, 28, 36, 0.98);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(48, 211, 120, 0.3);
+            border-radius: 16px;
+            padding: 12px;
+            z-index: 2000;
+            display: none;
+        }
+
+        .wallpaper-menu.show {
+            display: block;
+        }
+
+        .wallpaper-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 12px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.15s;
+            font-size: 12px;
+            color: #fff;
+        }
+
+        .wallpaper-option:hover {
+            background: rgba(48, 211, 120, 0.15);
+        }
+
+        .wallpaper-preview {
+            width: 30px;
+            height: 30px;
+            border-radius: 6px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Start Menu */
+        .start-menu {
+            position: fixed;
+            bottom: 70px;
+            left: 12px;
+            width: 280px;
+            background: rgba(22, 28, 36, 0.98);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(48, 211, 120, 0.3);
+            border-radius: 16px;
+            padding: 12px;
+            z-index: 2000;
+            display: none;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+
+        .start-menu.show {
+            display: block;
+        }
+
+        .menu-header {
+            padding: 8px 8px 12px;
+            border-bottom: 1px solid rgba(48, 211, 120, 0.2);
+            margin-bottom: 8px;
+        }
+
+        .menu-user {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #30d378, #1a9f5a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .user-info h4 {
+            color: #fff;
+            font-size: 14px;
+        }
+
+        .user-info p {
+            color: rgba(255,255,255,0.5);
+            font-size: 10px;
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 12px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.15s;
+            color: rgba(255,255,255,0.9);
+            font-size: 13px;
+        }
+
+        .menu-item:hover {
+            background: rgba(48, 211, 120, 0.15);
+        }
+
+        .menu-item i {
+            font-size: 18px;
+            width: 24px;
+            color: #30d378;
+        }
+
+        .menu-divider {
+            height: 1px;
+            background: rgba(48, 211, 120, 0.2);
+            margin: 8px 0;
+        }
+
+        /* Windows */
+        .window {
+            position: absolute;
+            background: rgba(22, 28, 36, 0.98);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(48, 211, 120, 0.35);
+            border-radius: 16px;
+            min-width: 320px;
+            min-height: 380px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+            z-index: 100;
+        }
+
+        .window.active-window {
+            border-color: rgba(48, 211, 120, 0.6);
+            box-shadow: 0 8px 32px rgba(48,211,120,0.15);
+        }
+
+        .window-header {
+            padding: 12px 16px;
+            background: rgba(48, 211, 120, 0.06);
+            border-bottom: 1px solid rgba(48, 211, 120, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: move;
+            border-radius: 16px 16px 0 0;
+        }
+
+        .window-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            font-weight: 500;
+            color: #30d378;
+        }
+
+        .window-controls {
+            display: flex;
+            gap: 8px;
+        }
+
+        .win-btn {
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.15s;
+            font-size: 14px;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .win-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .win-btn.close:hover {
+            background: #f85149;
+            color: #fff;
+        }
+
+        .window-content {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            max-height: 500px;
+            color: #e0e0e0;
+            font-size: 13px;
+        }
+
+        .window-content::-webkit-scrollbar {
+            width: 6px;
+        }
+        .window-content::-webkit-scrollbar-track {
+            background: rgba(255,255,255,0.05);
+            border-radius: 3px;
+        }
+        .window-content::-webkit-scrollbar-thumb {
+            background: rgba(48,211,120,0.4);
+            border-radius: 3px;
+        }
+
+        /* Profile Styles */
+        .profile-avatar {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #30d378, #1a9f5a);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 12px;
+            font-size: 34px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 12px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 22px;
+            font-weight: 700;
+            color: #30d378;
+        }
+
+        .stat-label {
+            font-size: 10px;
+            color: rgba(255,255,255,0.5);
+            margin-top: 4px;
+        }
+
+        .goal-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 0;
+            font-size: 12px;
+            color: #ccc;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        /* Terminal Styles */
+        .terminal-line {
+            font-family: 'Monaco', 'Cascadia Code', monospace;
+            font-size: 12px;
+            padding: 5px 0;
+            color: #30d378;
+        }
+
+        .terminal-output {
+            font-family: monospace;
+            font-size: 12px;
+            color: #aaa;
+            padding-left: 20px;
+            margin-bottom: 5px;
+        }
+
+        .terminal-input {
+            background: transparent;
+            border: none;
+            outline: none;
+            color: #fff;
+            font-family: monospace;
+            font-size: 12px;
+            width: 100%;
+            margin-top: 10px;
+            padding: 8px 0;
+        }
+
+        /* Skills */
+        .skill-bar {
+            margin-bottom: 15px;
+        }
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+        .skill-track {
+            background: rgba(255,255,255,0.1);
+            height: 5px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .skill-fill {
+            height: 100%;
+            border-radius: 5px;
+            transition: width 0.3s;
+        }
+
+        /* Games */
+        .game-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 14px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 1px solid rgba(48,211,120,0.15);
+        }
+
+        .game-card:hover {
+            background: rgba(48,211,120,0.1);
+            border-color: rgba(48,211,120,0.4);
+            transform: translateX(5px);
+        }
+
+        .game-card h4 {
+            font-size: 14px;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .game-card p {
+            font-size: 11px;
+            color: #999;
+        }
+
+        /* Snake Game */
+        .snake-canvas {
+            background: #0a0e12;
+            border-radius: 12px;
+            display: block;
+            margin: 10px auto;
+            border: 1px solid #30d378;
+        }
+
+        .game-score {
+            color: #30d378;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        .game-over {
+            color: #f85149;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        /* Toast */
+        .toast {
+            position: fixed;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #30d378;
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 600;
+            z-index: 3000;
+            display: none;
+            animation: fadeInUp 0.3s ease;
+            white-space: nowrap;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateX(-50%) translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .desktop-icons {
+                grid-template-columns: repeat(4, 70px);
+                gap: 8px;
+            }
+            .desktop-icon {
+                width: 65px;
+            }
+            .icon-box {
+                width: 45px;
+                height: 45px;
+                font-size: 22px;
+            }
+            .window {
+                min-width: 280px;
+                min-height: 320px;
+            }
+            .taskbar {
+                bottom: 8px;
+                left: 8px;
+                right: 8px;
+                height: 48px;
+            }
+            .start-btn span {
+                display: none;
+            }
+            .taskbar-item span {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="desktop wallpaper-default" id="desktop">
+    <div class="desktop-icons">
+        <div class="desktop-icon" data-app="profile">
+            <div class="icon-box" style="background: rgba(48,211,120,0.15);"><i class="ti ti-user-circle" style="color:#30d378; font-size: 28px;"></i></div>
+            <span>Profile</span>
+        </div>
+        <div class="desktop-icon" data-app="terminal">
+            <div class="icon-box" style="background: rgba(56,189,248,0.15);"><i class="ti ti-terminal-2" style="color:#38bdf8; font-size: 28px;"></i></div>
+            <span>Terminal</span>
+        </div>
+        <div class="desktop-icon" data-app="skills">
+            <div class="icon-box" style="background: rgba(163,113,247,0.15);"><i class="ti ti-code" style="color:#a371f7; font-size: 28px;"></i></div>
+            <span>Skills</span>
+        </div>
+        <div class="desktop-icon" data-app="games">
+            <div class="icon-box" style="background: rgba(255,184,0,0.15);"><i class="ti ti-device-gamepad-2" style="color:#ffb800; font-size: 28px;"></i></div>
+            <span>Games</span>
+        </div>
+        <div class="desktop-icon" data-app="github">
+            <div class="icon-box" style="background: rgba(255,255,255,0.1);"><i class="ti ti-brand-github" style="color:#fff; font-size: 28px;"></i></div>
+            <span>GitHub</span>
+        </div>
+        <div class="desktop-icon" data-app="youtube">
+            <div class="icon-box" style="background: rgba(255,0,0,0.15);"><i class="ti ti-brand-youtube" style="color:#ff0000; font-size: 28px;"></i></div>
+            <span>YouTube</span>
+        </div>
+    </div>
+</div>
+
+<div class="taskbar">
+    <div class="start-btn" id="startBtn">
+        <i class="ti ti-brand-tux"></i>
+        <span>AtharvaSec</span>
+    </div>
+    <div class="taskbar-apps" id="taskbarApps"></div>
+    <div class="taskbar-right">
+        <div class="wallpaper-btn" id="wallpaperBtn">
+            <i class="ti ti-photo"></i>
+        </div>
+        <div class="clock">
+            <div class="time" id="clockTime">--:--</div>
+            <div class="date" id="clockDate">---</div>
+        </div>
+    </div>
+</div>
+
+<!-- Wallpaper Menu -->
+<div class="wallpaper-menu" id="wallpaperMenu">
+    <div class="wallpaper-option" data-wallpaper="default">
+        <div class="wallpaper-preview" style="background: linear-gradient(135deg, #0a0e12, #1a1f2e);"></div>
+        <span>Default Dark</span>
+    </div>
+    <div class="wallpaper-option" data-wallpaper="cyberpunk">
+        <div class="wallpaper-preview" style="background-image: url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=100&auto=format');"></div>
+        <span>Cyberpunk City</span>
+    </div>
+    <div class="wallpaper-option" data-wallpaper="neon">
+        <div class="wallpaper-preview" style="background-image: url('https://images.unsplash.com/photo-1515634928627-2a4e0dae3ddf?q=80&w=100&auto=format');"></div>
+        <span>Neon Nights</span>
+    </div>
+    <div class="wallpaper-option" data-wallpaper="matrix">
+        <div class="wallpaper-preview" style="background-image: url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=100&auto=format');"></div>
+        <span>Matrix Code</span>
+    </div>
+    <div class="wallpaper-option" data-wallpaper="space">
+        <div class="wallpaper-preview" style="background-image: url('https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?q=80&w=100&auto=format');"></div>
+        <span>Deep Space</span>
+    </div>
+    <div class="wallpaper-option" data-wallpaper="mountain">
+        <div class="wallpaper-preview" style="background-image: url('https://images.unsplash.com/photo-1454496522488-7a8e488e8606?q=80&w=100&auto=format');"></div>
+        <span>Digital Mountains</span>
+    </div>
+</div>
+
+<div class="start-menu" id="startMenu">
+    <div class="menu-header">
+        <div class="menu-user">
+            <div class="user-avatar"><i class="ti ti-shield-lock"></i></div>
+            <div class="user-info">
+                <h4>Atharva Mani Tripathi</h4>
+                <p>@AtharvaSecurity · Python Dev</p>
+            </div>
+        </div>
+    </div>
+    <div class="menu-item" data-app="profile"><i class="ti ti-user-circle"></i><span>Profile</span></div>
+    <div class="menu-item" data-app="terminal"><i class="ti ti-terminal-2"></i><span>Terminal</span></div>
+    <div class="menu-item" data-app="skills"><i class="ti ti-code"></i><span>Skills</span></div>
+    <div class="menu-item" data-app="games"><i class="ti ti-device-gamepad-2"></i><span>Games</span></div>
+    <div class="menu-divider"></div>
+    <div class="menu-item" data-app="github"><i class="ti ti-brand-github"></i><span>GitHub</span></div>
+    <div class="menu-item" data-app="youtube"><i class="ti ti-brand-youtube"></i><span>YouTube</span></div>
+    <div class="menu-divider"></div>
+    <div class="menu-item" id="shutdownBtn"><i class="ti ti-power"></i><span>Shut Down</span></div>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script>
+    // Wallpaper Management
+    const wallpapers = {
+        default: 'wallpaper-default',
+        cyberpunk: 'wallpaper-cyberpunk',
+        neon: 'wallpaper-neon',
+        matrix: 'wallpaper-matrix',
+        space: 'wallpaper-space',
+        mountain: 'wallpaper-mountain'
+    };
+
+    function setWallpaper(wallpaperKey) {
+        const desktop = document.getElementById('desktop');
+        desktop.className = 'desktop';
+        desktop.classList.add(wallpapers[wallpaperKey]);
+        localStorage.setItem('webos_wallpaper', wallpaperKey);
+        showToast(`🖼️ Wallpaper changed to ${wallpaperKey}`);
+    }
+
+    function loadSavedWallpaper() {
+        const saved = localStorage.getItem('webos_wallpaper');
+        if (saved && wallpapers[saved]) {
+            document.getElementById('desktop').classList.add(wallpapers[saved]);
+        } else {
+            document.getElementById('desktop').classList.add('wallpaper-default');
+        }
+    }
+
+    // Window Management
+    let windows = {};
+    let windowZ = 100;
+    let windowCounter = 0;
+
+    // App configurations
+    const appConfigs = {
+        profile: { title: "Profile — Atharva Mani", width: 400, height: 480, content: getProfileContent() },
+        terminal: { title: "Terminal — bash", width: 520, height: 450, content: getTerminalContent() },
+        skills: { title: "Skills — Tech Stack", width: 380, height: 450, content: getSkillsContent() },
+        games: { title: "Games — Arcade", width: 450, height: 480, content: getGamesContent() },
+        github: { title: "GitHub", width: 400, height: 300, content: '<div style="text-align:center; padding:40px;"><i class="ti ti-brand-github" style="font-size: 64px; color:#30d378;"></i><p style="margin:20px 0;">Opening GitHub profile...</p><button class="start-btn" onclick="window.open(\'https://github.com/AtharvaSecurity\', \'_blank\')" style="margin-top:10px;">Open GitHub →</button></div>' },
+        youtube: { title: "YouTube", width: 400, height: 300, content: '<div style="text-align:center; padding:40px;"><i class="ti ti-brand-youtube" style="font-size: 64px; color:#ff0000;"></i><p style="margin:20px 0;">Opening YouTube channel...</p><button class="start-btn" onclick="window.open(\'https://www.youtube.com/@AtharvaSecurity\', \'_blank\')" style="margin-top:10px;">Open YouTube →</button></div>' }
+    };
+
+    function getProfileContent() {
+        return `
+            <div style="text-align:center;">
+                <div class="profile-avatar"><i class="ti ti-shield-lock"></i></div>
+                <h3 style="color:#fff; margin-bottom: 5px;">Atharva Mani Tripathi</h3>
+                <p style="color:#30d378; font-size: 13px;">@AtharvaSecurity</p>
+                <p style="color:#888; font-size: 11px; margin-top: 8px;">Class 11 · Python Dev · Cybersecurity</p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card"><div class="stat-number">5</div><div class="stat-label">Repos</div></div>
+                <div class="stat-card"><div class="stat-number">3</div><div class="stat-label">Followers</div></div>
+                <div class="stat-card"><div class="stat-number">7</div><div class="stat-label">Following</div></div>
+            </div>
+            <div style="background:rgba(255,255,255,0.03); border-radius: 12px; padding: 15px; margin-bottom: 15px;">
+                <h4 style="color:#30d378; margin-bottom: 10px; font-size: 13px;">🎯 2026 Goals</h4>
+                <div class="goal-item"><i class="ti ti-check" style="color:#30d378;"></i> Improve Python skills</div>
+                <div class="goal-item"><i class="ti ti-check" style="color:#30d378;"></i> Learn Linux fundamentals</div>
+                <div class="goal-item"><i class="ti ti-check" style="color:#30d378;"></i> Learn networking basics</div>
+                <div class="goal-item"><i class="ti ti-check" style="color:#30d378;"></i> Build open-source projects</div>
+                <div class="goal-item"><i class="ti ti-check" style="color:#30d378;"></i> Strengthen cybersecurity</div>
+                <div class="goal-item"><i class="ti ti-check" style="color:#30d378;"></i> Grow GitHub portfolio</div>
+            </div>
+            <div style="display: flex; gap: 10px;">
+                <button class="start-btn" onclick="window.open('https://github.com/AtharvaSecurity', '_blank')" style="flex:1; justify-content:center;"><i class="ti ti-brand-github"></i> GitHub</button>
+                <button class="start-btn" onclick="window.open('https://www.youtube.com/@AtharvaSecurity', '_blank')" style="flex:1; justify-content:center;"><i class="ti ti-brand-youtube"></i> YouTube</button>
+            </div>
+        `;
+    }
+
+    function getSkillsContent() {
+        const skills = [
+            {name:"Python", level:72, color:"#30d378"},
+            {name:"Cybersecurity", level:55, color:"#f85149"},
+            {name:"Web Development", level:60, color:"#38bdf8"},
+            {name:"Git & GitHub", level:65, color:"#a371f7"},
+            {name:"Linux", level:48, color:"#d2992a"},
+            {name:"Networking", level:40, color:"#ff1a1a"}
+        ];
+        return `
+            <div>
+                ${skills.map(s => `
+                    <div class="skill-bar">
+                        <div class="skill-header"><span>${s.name}</span><span>${s.level}%</span></div>
+                        <div class="skill-track"><div class="skill-fill" style="width:${s.level}%; background:${s.color};"></div></div>
+                    </div>
+                `).join('')}
+            </div>
+            <div style="margin-top: 25px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.08);">
+                <h4 style="color:#30d378; font-size:12px; margin-bottom:10px;">🛠️ Tools</h4>
+                <div style="display:flex; flex-wrap:wrap; gap:8px;">
+                    ${["VS Code","Kali Linux","Wireshark","Git","Python 3","Nmap","CustomTkinter","Scapy"].map(t => `<span style="background:rgba(255,255,255,0.05); padding:4px 10px; border-radius:8px; font-size:11px;">${t}</span>`).join('')}
+                </div>
+            </div>
+        `;
+    }
+
+    function getGamesContent() {
+        return `
+            <div id="gamesContainer">
+                <div class="game-card" onclick="startSnakeGame()">
+                    <h4><i class="ti ti-brand-snake"></i> Snake Game</h4>
+                    <p>Classic snake game — eat food, grow longer, avoid walls</p>
+                </div>
+                <div class="game-card" onclick="showToast('🎮 Memory Game coming soon!')">
+                    <h4><i class="ti ti-cards"></i> Memory Match</h4>
+                    <p>Match pairs of cards — test your memory</p>
+                </div>
+                <div class="game-card" onclick="showToast('🎮 Tic Tac Toe coming soon!')">
+                    <h4><i class="ti ti-grid-3x3"></i> Tic Tac Toe</h4>
+                    <p>Play against yourself — X vs O</p>
+                </div>
+                <div style="margin-top:15px; text-align:center;">
+                    <p style="font-size:11px; color:#666;">⚡ More games coming soon ⚡</p>
+                </div>
+            </div>
+        `;
+    }
+
+    let snakeInterval;
+    function startSnakeGame() {
+        const container = document.getElementById('gamesContainer');
+        if (!container) return;
+        
+        container.innerHTML = `
+            <div style="text-align:center;">
+                <div class="game-score">Score: <span id="snakeScore">0</span></div>
+                <canvas id="snakeCanvas" width="350" height="350" class="snake-canvas"></canvas>
+                <div><button class="start-btn" onclick="resetSnakeGame()" style="margin-top:15px;">🔄 New Game</button></div>
+                <div id="snakeGameOver" class="game-over"></div>
+                <button class="start-btn" onclick="location.reload()" style="margin-top:15px; background:transparent;">← Back to Games</button>
+            </div>
+        `;
+        
+        initSnakeGame();
+    }
+    
+    function resetSnakeGame() {
+        const canvas = document.getElementById('snakeCanvas');
+        if (snakeInterval) clearInterval(snakeInterval);
+        initSnakeGame();
+    }
+    
+    function initSnakeGame() {
+        const canvas = document.getElementById('snakeCanvas');
+        if (!canvas) return;
+        
+        let snake = [{x: 175, y: 175}, {x: 165, y: 175}, {x: 155, y: 175}];
+        let direction = 'RIGHT';
+        let food = {x: 0, y: 0};
+        let score = 0;
+        let gameRunning = true;
+        
+        function randomFood() {
+            food = {x: Math.floor(Math.random() * 35) * 10, y: Math.floor(Math.random() * 35) * 10};
+            if (snake.some(segment => segment.x === food.x && segment.y === food.y)) randomFood();
+        }
+        randomFood();
+        
+        function draw() {
+            const ctx = canvas.getContext('2d');
+            ctx.fillStyle = '#0a0e12';
+            ctx.fillRect(0, 0, 350, 350);
+            ctx.fillStyle = '#30d378';
+            snake.forEach(segment => ctx.fillRect(segment.x, segment.y, 9, 9));
+            ctx.fillStyle = '#ff4444';
+            ctx.fillRect(food.x, food.y, 9, 9);
+        }
+        
+        function update() {
+            if (!gameRunning) return;
+            let newHead = {...snake[0]};
+            if (direction === 'RIGHT') newHead.x += 10;
+            if (direction === 'LEFT') newHead.x -= 10;
+            if (direction === 'UP') newHead.y -= 10;
+            if (direction === 'DOWN') newHead.y += 10;
+            
+            if (newHead.x < 0 || newHead.x >= 350 || newHead.y < 0 || newHead.y >= 350 || snake.some(segment => segment.x === newHead.x && segment.y === newHead.y)) {
+                gameRunning = false;
+                const gameOverDiv = document.getElementById('snakeGameOver');
+                if (gameOverDiv) gameOverDiv.innerHTML = '<strong>💀 GAME OVER 💀</strong><br>🐧 Thanks for playing!';
+                if (snakeInterval) clearInterval(snakeInterval);
+                return;
+            }
+            
+            snake.unshift(newHead);
+            if (newHead.x === food.x && newHead.y === food.y) {
+                score += 10;
+                const scoreSpan = document.getElementById('snakeScore');
+                if (scoreSpan) scoreSpan.textContent = score;
+                randomFood();
+            } else {
+                snake.pop();
+            }
+            draw();
+        }
+        
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' && direction !== 'LEFT') direction = 'RIGHT';
+            if (e.key === 'ArrowLeft' && direction !== 'RIGHT') direction = 'LEFT';
+            if (e.key === 'ArrowUp' && direction !== 'DOWN') direction = 'UP';
+            if (e.key === 'ArrowDown' && direction !== 'UP') direction = 'DOWN';
+        });
+        
+        draw();
+        if (snakeInterval) clearInterval(snakeInterval);
+        snakeInterval = setInterval(update, 100);
+    }
+
+    function getTerminalContent() {
+        return `
+            <div id="termOut" style="font-family:monospace; font-size:12px; margin-bottom:10px; max-height:300px; overflow-y:auto;">
+                <div class="terminal-line">atharva@WebOS:~$ welcome</div>
+                <div class="terminal-output">Welcome to AtharvaSecurity WebOS v3.0</div>
+                <div class="terminal-output">Type 'help' for available commands</div>
+                <div class="terminal-output">Type 'games' to play Snake</div>
+            </div>
+            <div style="display:flex; align-items:center; gap:8px;">
+                <span style="color:#30d378; font-family:monospace;">$</span>
+                <input type="text" id="termInput" class="terminal-input" placeholder="type command..." autofocus>
+            </div>
+        `;
+    }
+
+    function initTerminal() {
+        const input = document.getElementById('termInput');
+        if (!input) return;
+        
+        input.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                const cmd = input.value.trim();
+                const output = document.getElementById('termOut');
+                output.innerHTML += `<div class="terminal-line">atharva@WebOS:~$ ${cmd}</div>`;
+                
+                let response = '';
+                switch(cmd.toLowerCase()) {
+                    case 'help':
+                        response = '📖 Commands: help, ls, whoami, skills, games, date, clear, repo';
+                        break;
+                    case 'whoami':
+                        response = 'Atharva Mani Tripathi - Python Developer | Cybersecurity Learner | Class 11 Commerce';
+                        break;
+                    case 'ls':
+                        response = 'Desktop/  Documents/  Downloads/  Games/  Skills/  README.md';
+                        break;
+                    case 'skills':
+                        response = '🐍 Python 72% | 🔒 Cybersecurity 55% | 🌐 Web Dev 60% | 🐧 Linux 48%';
+                        break;
+                    case 'games':
+                        response = 'Opening Games...';
+                        setTimeout(() => openApp('games'), 100);
+                        break;
+                    case 'date':
+                        response = new Date().toString();
+                        break;
+                    case 'repo':
+                        response = '🔗 https://github.com/AtharvaSecurity';
+                        break;
+                    case 'clear':
+                        output.innerHTML = '';
+                        input.value = '';
+                        input.focus();
+                        return;
+                    default:
+                        response = `❌ Command '${cmd}' not found. Type 'help' for options.`;
+                }
+                if (response) output.innerHTML += `<div class="terminal-output">${response}</div>`;
+                output.scrollTop = output.scrollHeight;
+                input.value = '';
+                input.focus();
+            }
+        });
+        input.focus();
+    }
+
+    function openApp(appId) {
+        if (appId === 'github') {
+            window.open('https://github.com/AtharvaSecurity', '_blank');
+            return;
+        }
+        if (appId === 'youtube') {
+            window.open('https://www.youtube.com/@AtharvaSecurity', '_blank');
+            return;
+        }
+
+        if (windows[appId]) {
+            focusWindow(appId);
+            return;
+        }
+
+        const cfg = appConfigs[appId];
+        if (!cfg) return;
+
+        const winId = `win_${appId}`;
+        const win = document.createElement('div');
+        win.className = 'window';
+        win.id = winId;
+        win.style.width = cfg.width + 'px';
+        win.style.height = cfg.height + 'px';
+        win.style.left = (50 + (windowCounter * 30)) + 'px';
+        win.style.top = (50 + (windowCounter * 25)) + 'px';
+        win.style.zIndex = ++windowZ;
+
+        win.innerHTML = `
+            <div class="window-header">
+                <div class="window-title"><i class="ti ti-app-window"></i><span>${cfg.title}</span></div>
+                <div class="window-controls">
+                    <div class="win-btn minimize" data-app="${appId}"><i class="ti ti-minus"></i></div>
+                    <div class="win-btn close" data-app="${appId}"><i class="ti ti-x"></i></div>
+                </div>
+            </div>
+            <div class="window-content" id="winContent_${appId}">${cfg.content}</div>
+        `;
+
+        document.querySelector('.desktop').appendChild(win);
+        windows[appId] = { element: win, minimized: false, title: cfg.title };
+        makeDraggable(win);
+        addToTaskbar(appId, cfg.title);
+        focusWindow(winId);
+
+        win.querySelector('.close').addEventListener('click', () => closeApp(appId));
+        win.querySelector('.minimize').addEventListener('click', () => minimizeApp(appId));
+        win.addEventListener('mousedown', () => focusWindow(appId));
+
+        windowCounter++;
+
+        if (appId === 'terminal') setTimeout(() => initTerminal(), 100);
+        if (appId === 'games') {
+            // Make startSnakeGame available globally
+            window.startSnakeGame = startSnakeGame;
+            window.resetSnakeGame = resetSnakeGame;
+            window.initSnakeGame = initSnakeGame;
+        }
+    }
+
+    function closeApp(appId) {
+        if (windows[appId]) {
+            windows[appId].element.remove();
+            delete windows[appId];
+            const tb = document.getElementById(`taskbar_${appId}`);
+            if (tb) tb.remove();
+        }
+    }
+
+    function minimizeApp(appId) {
+        if (windows[appId]) {
+            windows[appId].minimized = !windows[appId].minimized;
+            windows[appId].element.style.display = windows[appId].minimized ? 'none' : 'flex';
+            const tb = document.getElementById(`taskbar_${appId}`);
+            if (tb) tb.style.opacity = windows[appId].minimized ? '0.5' : '1';
+        }
+    }
+
+    function focusWindow(appId) {
+        const win = document.getElementById(appId);
+        if (win && win.style.display !== 'none') {
+            win.style.zIndex = ++windowZ;
+            win.classList.add('active-window');
+            
+            document.querySelectorAll('.taskbar-item').forEach(item => {
+                item.classList.remove('active');
+                if (item.dataset.app === appId.replace('win_', '')) {
+                    item.classList.add('active');
+                }
+            });
+        }
+    }
+
+    function addToTaskbar(appId, title) {
+        const taskbar = document.getElementById('taskbarApps');
+        const btn = document.createElement('div');
+        btn.className = 'taskbar-item';
+        btn.id = `taskbar_${appId}`;
+        btn.dataset.app = appId;
+        btn.innerHTML = `<i class="ti ti-app-window"></i><span>${title.split('—')[0].trim()}</span>`;
+        btn.onclick = () => {
+            const win = document.getElementById(`win_${appId}`);
+            if (win) {
+                if (windows[appId] && windows[appId].minimized) {
+                    win.style.display = 'flex';
+                    windows[appId].minimized = false;
+                }
+                focusWindow(`win_${appId}`);
+            }
+        };
+        taskbar.appendChild(btn);
+    }
+
+    function makeDraggable(el) {
+        const header = el.querySelector('.window-header');
+        let drag = false, startX, startY, startLeft, startTop;
+        
+        header.addEventListener('mousedown', (e) => {
+            if (e.target.closest('.window-controls')) return;
+            drag = true;
+            startX = e.clientX;
+            startY = e.clientY;
+            startLeft = parseInt(el.style.left);
+            startTop = parseInt(el.style.top);
+            e.preventDefault();
+        });
+        
+        document.addEventListener('mousemove', (e) => {
+            if (!drag) return;
+            el.style.left = (startLeft + e.clientX - startX) + 'px';
+            el.style.top = (startTop + e.clientY - startY) + 'px';
+        });
+        
+        document.addEventListener('mouseup', () => drag = false);
+    }
+
+    function showToast(msg) {
+        const toast = document.getElementById('toast');
+        toast.textContent = msg;
+        toast.style.display = 'block';
+        setTimeout(() => {
+            toast.style.display = 'none';
+        }, 2000);
+    }
+
+    // Make functions global
+    window.startSnakeGame = startSnakeGame;
+    window.resetSnakeGame = resetSnakeGame;
+    window.initSnakeGame = initSnakeGame;
+    window.showToast = showToast;
+    window.openApp = openApp;
+
+    // Event Listeners
+    document.querySelectorAll('.desktop-icon').forEach(icon => {
+        icon.addEventListener('dblclick', () => {
+            const app = icon.dataset.app;
+            if (app) openApp(app);
+        });
+    });
+
+    document.querySelectorAll('.menu-item[data-app]').forEach(item => {
+        item.addEventListener('click', () => {
+            const app = item.dataset.app;
+            if (app) openApp(app);
+            document.getElementById('startMenu').classList.remove('show');
+        });
+    });
+
+    document.getElementById('startBtn').addEventListener('click', (e) => {
+        e.stopPropagation();
+        document.getElementById('startMenu').classList.toggle('show');
+    });
+
+    document.getElementById('shutdownBtn').addEventListener('click', () => {
+        if (confirm('Shut down WebOS?')) {
+            showToast('🖥️ Shutting down...');
+            setTimeout(() => {
+                document.body.innerHTML = '<div style="background:#0a0e12; width:100vw; height:100vh; display:flex; align-items:center; justify-content:center; color:#30d378; font-family:monospace;">🐧 WebOS has shut down. Refresh to restart.</div>';
+            }, 1500);
+        }
+        document.getElementById('startMenu').classList.remove('show');
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('#startMenu') && !e.target.closest('#startBtn')) {
+            document.getElementById('startMenu').classList.remove('show');
+        }
+        if (!e.target.closest('#wallpaperMenu') && !e.target.closest('#wallpaperBtn')) {
+            document.getElementById('wallpaperMenu').classList.remove('show');
+        }
+    });
+
+    // Wallpaper menu
+    document.getElementById('wallpaperBtn').addEventListener('click', (e) => {
+        e.stopPropagation();
+        document.getElementById('wallpaperMenu').classList.toggle('show');
+    });
+
+    document.querySelectorAll('.wallpaper-option').forEach(option => {
+        option.addEventListener('click', () => {
+            const wallpaper = option.dataset.wallpaper;
+            setWallpaper(wallpaper);
+            document.getElementById('wallpaperMenu').classList.remove('show');
+        });
+    });
+
+    // Clock
+    function updateClock() {
+        const now = new Date();
+        document.getElementById('clockTime').textContent = now.toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
+        document.getElementById('clockDate').textContent = now.toLocaleDateString([], {weekday:'short', month:'short', day:'numeric'});
+    }
+    updateClock();
+    setInterval(updateClock, 1000);
+
+    // Initialize
+    loadSavedWallpaper();
+    showToast('🐧 Welcome to WebOS! Double-click any icon to start.');
+</script>
+
+</body>
+</html>
