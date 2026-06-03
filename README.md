@@ -40,7 +40,6 @@
 
 ---
 
-## Featured Projects
 
 ### StudentPro Calculator
 
