@@ -54,15 +54,6 @@ Modern calculator built with Python featuring:
 
 Repository documenting my Python learning path, experiments, and projects.
 
----
-
-## GitHub Streak
-
-<p align="center">
-<img src="https://streak-stats.demolab.com?user=Atharva055&theme=github-dark-blue" />
-</p>
-
----
 
 <h2>📈 Contribution Graph</h2>
 
