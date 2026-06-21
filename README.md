@@ -21,7 +21,5 @@
 ### 🔝 Top Contributed Repo
 ![](https://github-contributor-stats.vercel.app/api?username=AtharvaSecurity&limit=5&theme=dark&combine_all_yearly_contributions=true)
 
----
-[![](https://komarev.com/ghpvc/?username=AtharvaSecurity&icon=0&color=0)])
 
 <!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
