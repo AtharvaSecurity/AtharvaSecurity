@@ -1,42 +1,112 @@
-Hi ![](https://user-images.githubusercontent.com/18350557/176309783-0785949b-9127-417c-8b55-ab5a4333674e.gif) My name is Atharva Mani Tripathi
-==============================================================================================================================================
+# 🛡️ Atharva Mani Tripathi
+### `Cybersecurity Researcher & Penetration Tester`
 
-🔐 Cybersecurity Enthusiast | Bug Bounty Learner | Content Creator
-------------------------------------------------------------------
-
-🔐 Passionate Cybersecurity Enthusiast from India, currently exploring Web Application Security, Ethical Hacking, and Bug Bounty Hunting. I started my cybersecurity journey in Class 9 and have been continuously learning about Linux, Networking, Python, and Penetration Testing ever since.
-
-🎓 Currently a Class 11 Commerce student with a strong interest in technology and information security. I enjoy discovering vulnerabilities, understanding how systems work, building security-focused projects, and sharing my learning journey with the community through my YouTube channel, AtharvaSecurity.
-
-🚀 My goal is to become a skilled Cybersecurity Professional specializing in Web Security and Penetration Testing. I believe in learning by doing, which is why I spend my time practicing on labs, building projects, researching security concepts, and improving my technical skills every day.
-
-💡 Always curious, always learning, and always looking for the next challenge.
-
-* 🌍  I'm based in India
-* ✉️  You can contact me at [atharvamanitripathitripathi@gmail.com](mailto:atharvamanitripathitripathi@gmail.com)
-* 🧠  I'm currently learning Web Application Security, Bug Bounty Hunting, Linux, Python, Networking, Burp Suite, OWASP Top 10
-* 👥  I'm looking to collaborate on Open Source Security Projects
-* 💬  Ask me about I am in 11th class and commerce without maths student
-
-<p align="left">
-<a href="https://www.python.org/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" alt="Python" title="Python" width="36" height="36" /></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/javascript-colored.svg" alt="JavaScript" title="JavaScript" width="36" height="36" /></a><a href="https://docs.microsoft.com/en-us/cpp/?view=msvc-170" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/c-colored.svg" alt="C" title="C" width="36" height="36" /></a><a href="https://www.gnu.org/software/bash/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/gnubash-colored.svg" alt="GNU Bash" title="GNU Bash" width="36" height="36" /></a><a href="https://code.visualstudio.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/visualstudiocode-colored.svg" alt="VS Code" title="VS Code" width="36" height="36" /></a><a href="https://store.arduino.cc/?gclid=Cj0KCQjw2eilBhCCARIsAG0Pf8uueBifykWcsSS4LPESeGQfxGVKJYnzV7bz471XfknQJy_1VINVWM8aAkLtEALw_wcB" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/arduino-colored.svg" alt="Arduino" title="Arduino" width="36" height="36" /></a><a href="https://www.raspberrypi.org/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/raspberrypi-colored.svg" alt="Raspberry Pi" title="Raspberry Pi" width="36" height="36" /></a><a href="https://www.linux.org" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/linux-colored.svg" alt="Linux" title="Linux" width="36" height="36" /></a><a href="https://www.docker.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/docker-colored.svg" alt="Docker" title="Docker" width="36" height="36" /></a>
+<p align="center">
+  <a href="https://github.com/AtharvaSecurity">
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=00FF66&center=true&vCenter=true&width=600&height=50&lines=🛡️+Cybersecurity+Researcher;💻+Web+Application+Penetester;🐛+Bug+Bounty+Hunter;🐍+Python+Developer" alt="Typing SVG" />
+  </a>
 </p>
 
-### Socials
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=AtharvaSecurity&color=00FF66&style=flat-square&label=SECURITY+CLEARANCE+ACCESS" alt="Visitor Counter" />
+</p>
 
-<p align="left"> <a href="https://www.github.com/AtharvaSecurity" target="_blank" rel="noreferrer"> <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/github-dark.svg" /> <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/github.svg" /> <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/github.svg" width="32" height="32" alt="GitHub" title="GitHub" /> </picture> </a> <a href="https://www.gitlab.com/AtharvaSecurity" target="_blank" rel="noreferrer"> <picture> <source media="(prefers-color-scheme: dark)" srcset="" /> <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/gitlab.svg" /> <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/gitlab.svg" width="32" height="32" alt="GitLab" title="GitLab" /> </picture> </a> <a href="https://www.youtube.com/@AtharvaSecurity" target="_blank" rel="noreferrer"> <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/youtube-dark.svg" /> <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/youtube.svg" /> <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/youtube.svg" width="32" height="32" alt="YouTube" title="YouTube" /> </picture> </a> <a href="https://discord.com/users/AtharvaSecurity" target="_blank" rel="noreferrer"> <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/discord-dark.svg" /> <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/discord.svg" /> <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/discord.svg" width="32" height="32" alt="Discord" title="Discord" /> </picture> </a></p>
-<a href="https://www.github.com/AtharvaSecurity" target="_blank" rel="noreferrer"><img
-src="https://img.shields.io/github/followers/AtharvaSecurity?logo=github&style=for-the-badge&color=0891b2&labelColor=1c1917" /></a>
-### Badges
+---
 
-<b>My GitHub Stats</b>
+## 🧑‍💻 About Me
 
-<a href="http://www.github.com/AtharvaSecurity"><img src="https://github-readme-stats.vercel.app/api?username=AtharvaSecurity&show_icons=true&hide=&count_private=true&title_color=0891b2&text_color=ffffff&icon_color=0891b2&bg_color=1c1917&hide_border=true&show_icons=true" alt="AtharvaSecurity's GitHub stats" /></a>
+I am a driven **Class 11 Commerce student** from **India** with a profound passion for offensive security, defensive structures, and system internals. My journey into the world of ethical hacking began in Class 9, transforming a curiosity about how things work into a dedicated pursuit of identifying and mitigating critical vulnerabilities.
 
-<a href="http://www.github.com/AtharvaSecurity"><img src="https://github-readme-streak-stats.herokuapp.com/?user=AtharvaSecurity&stroke=ffffff&background=1c1917&ring=0891b2&fire=0891b2&currStreakNum=ffffff&currStreakLabel=0891b2&sideNums=ffffff&sideLabels=ffffff&dates=ffffff&hide_border=true" /></a>
+By pairing an analytical mindset derived from commerce with deep technical execution, I evaluate security threats from both operational and risk-management angles. I specialize in web application security, automation scripts, and proactive penetration testing.
 
-<a href="https://github.com/AtharvaSecurity" align="left"><img src="https://github-readme-stats.vercel.app/api/top-langs/?username=AtharvaSecurity&langs_count=10&title_color=0891b2&text_color=ffffff&icon_color=0891b2&bg_color=1c1917&hide_border=true&locale=en&custom_title=Top%20%Languages" alt="Top Languages" /></a>
+* 🌐 **Location:** India 🇮🇳
+* ⚡ **Core Focus:** Web Application Vulnerabilities (OWASP Top 10) & Network Assessment
+* 🚀 **Ultimate Objective:** To protect digital infrastructure as an elite Cybersecurity Researcher and Enterprise Penetration Tester.
 
-<b>Top Repositories</b>
+---
 
-<div width="100%" align="center"><a href="https://github.com/AtharvaSecurity/eduminSaaS" align="left"><img align="left" width="45%" src="https://github-readme-stats.vercel.app/api/pin/?username=AtharvaSecurity&repo=eduminSaaS&title_color=0891b2&text_color=ffffff&icon_color=0891b2&bg_color=1c1917&hide_border=true&locale=en" /></a></div><br /><br /><br /><br /><br /><br /><br />
+## 📚 Currently Learning & Exploring
+
+- 🛡️ Advanced API Penetration Testing & Token Abuse techniques.
+- ⚙️ DevSecOps pipelines and automating security scanning inside containerized environments.
+- 📉 Threat modeling and assessing the economic impact of security breaches.
+
+---
+
+## 🛠️ Tech Stack & Cyber Security Toolkit
+
+### 🔒 Core Security & Diagnostics
+<p align="left">
+  <img src="https://img.shields.io/badge/Burp_Suite-FF6600?style=for-the-badge&logo=portswigger&logoColor=white" alt="Burp Suite" />
+  <img src="https://img.shields.io/badge/Nmap-004488?style=for-the-badge&logo=nmap&logoColor=white" alt="Nmap" />
+  <img src="https://img.shields.io/badge/Wireshark-1679A7?style=for-the-badge&logo=wireshark&logoColor=white" alt="Wireshark" />
+  <img src="https://img.shields.io/badge/Networking-00599C?style=for-the-badge&logo=wireshark&logoColor=white" alt="Networking" />
+</p>
+
+### 💻 Programming & Web Technologies
+<p align="left">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" />
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" />
+</p>
+
+### 🐧 Ecosystem & Databases
+<p align="left">
+  <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux" />
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" />
+  <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL" />
+  <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB" />
+</p>
+
+### 🔧 Version Control & Tools
+<p align="left">
+  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git" />
+  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
+  <img src="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white" alt="Postman" />
+</p>
+
+---
+
+## 🎯 Security Objectives for 2026
+
+- [ ] Clear a foundational security validation benchmark (e.g., CompTIA Security+ or eJPT).
+- [ ] Scale open-source vulnerability scanning scripts to help independent developers find configuration bugs.
+- [ ] Document at least 15 detailed target breakdown write-ups on my YouTube channel.
+- [ ] Secure a critical platform recognition milestone on platforms like HackerOne or Bugcrowd.
+
+---
+
+## 📊 Analytics & Git Infrastructure
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=AtharvaSecurity&show_icons=true&theme=tokyonight&count_private=true&border_radius=10" alt="Atharva's GitHub Stats" width="48%" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=AtharvaSecurity&theme=tokyonight&border_radius=10" alt="Atharva's GitHub Streak" width="48%" />
+</p>
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=AtharvaSecurity&layout=compact&theme=tokyonight&border_radius=10" alt="Top Languages" width="48%" />
+</p>
+
+### 🏆 Achievement Showcase
+<p align="center">
+  <a href="https://github.com/ryo-ma/github-profile-trophy">
+    <img src="https://github-profile-trophy.vercel.app/?username=AtharvaSecurity&theme=tokyonight&no-bg=true&no-frame=true&margin-w=15" alt="GitHub Trophies" />
+  </a>
+</p>
+
+---
+
+## 🤝 Establish Connection
+
+Feel free to audit my repositories, watch educational breakdowns, or reach out for professional collaborations regarding pentesting and web audit inquiries.
+
+[![YouTube Badge](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/@AtharvaSecurity)
+[![Instagram Badge](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/atharvamanitripathii)
+[![GitHub Badge](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/AtharvaSecurity)
+
+---
+
+<p align="center">
+  <code>Console.log("Secure the perimeter. Happy hacking!");</code>
+</p>
