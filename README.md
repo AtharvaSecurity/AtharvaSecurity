@@ -1,3 +1,6 @@
+# 💫 About Me:
+👋 Hi, I'm Atharva.<br>🔒 Cybersecurity & Web Application Security enthusiast.<br>🌱 Currently learning JavaScript.<br>🐍 Next goal: Python for security automation and scripting.<br>💻 Ubuntu Linux user documenting my learning journey.<br>
+
 
 ## 🌐 Socials:
 [![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://instagram.com/atharvamanitripathii) [![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?logo=YouTube&logoColor=white)](https://youtube.com/@UCvLvXnK7SyKlFtgMSXiOUeQ) [![email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:atharvamanitripathitripathi@gmail.com) 
