@@ -1,77 +1,51 @@
-# Atharva 👋
+<h1 align="center">Hi 👋, I'm Atharva</h1>
 
-```c
-while(!success) {
-    learn();
-    build();
-    improve();
-}
-```
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&center=true&vCenter=true&width=600&lines=Learning+C+Programming;Future+Cybersecurity+Professional;Linux+Enthusiast;Building+Strong+Foundations" alt="Typing SVG" />
+</p>
 
-## About Me
-
-I'm Atharva, a Class 11 student from India currently learning Computer Science from the ground up.
-
-My goal is simple:
-
-Build a strong foundation in programming, Linux, networking, and cybersecurity before starting my BCA journey.
-
-Currently spending my time learning C Programming, exploring Linux, and understanding how computers actually work behind the scenes.
+<p align="center">
+  <a href="https://github.com/AtharvaSecurity">
+    <img src="https://img.shields.io/badge/GitHub-AtharvaSecurity-181717?style=for-the-badge&logo=github">
+  </a>
+</p>
 
 ---
 
-## Currently Learning
+## 🚀 About Me
+
+* 🎓 Class 11 Student
+* 💻 Learning C Programming
+* 🐧 Ubuntu Linux User
+* 🔒 Interested in Cybersecurity
+* 🎯 Goal: BCA → Cybersecurity Career
+
+---
+
+## 🛠️ Current Stack
+
+![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge\&logo=ubuntu\&logoColor=white)
+![C](https://img.shields.io/badge/C-00599C?style=for-the-badge\&logo=c\&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge\&logo=git\&logoColor=white)
+![Geany](https://img.shields.io/badge/Geany-00AEEF?style=for-the-badge)
+
+---
+
+## 📊 GitHub Stats
+
+![Atharva's GitHub Stats](https://github-readme-stats.vercel.app/api?username=AtharvaSecurity\&show_icons=true\&theme=dark)
+
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=AtharvaSecurity\&layout=compact\&theme=dark)
+
+---
+
+## 🌱 Currently Learning
 
 * C Programming
-* Linux (Ubuntu)
+* Linux Fundamentals
 * Git & GitHub
-* Computer Fundamentals
+* Computer Science Fundamentals
 
 ---
 
-## Future Goals
-
-* Cybersecurity
-* Ethical Hacking
-* Security Research
-* Bug Bounty Hunting
-* Open Source Contributions
-
----
-
-## Current Setup
-
-* Ubuntu Linux
-* Geany
-* GCC
-* Google Chrome
-* The C Programming Language (K&R)
-
----
-
-## Philosophy
-
-I don't want to become a developer who only knows frameworks.
-
-I want to understand:
-
-* How memory works
-* How operating systems work
-* How networks work
-* How software works
-
-From the fundamentals.
-
----
-
-## GitHub Journey
-
-This profile is a collection of projects, experiments, notes, and lessons from my learning journey.
-
-Every repository here represents something I have learned, built, broken, and fixed myself.
-
----
-
-> Learning one line of code at a time.
->
-> See you in the terminal.
+> Learning one line of code at a time 🚀
