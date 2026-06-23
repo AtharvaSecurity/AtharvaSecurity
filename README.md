@@ -1,12 +1,77 @@
-# 💫 About Me:
-🔭 I'm currently working on improving my Python and Linux skills<br>🤝 I'm looking to collaborate on beginner-friendly cybersecurity projects<br>🌱 I'm currently learning Python, Linux, Git, HTML, CSS, and JavaScript<br>💬 Ask me about Cybersecurity, Linux, Python, and Web Security<br>⚡ Goal: Become a Web Application Security Engineer & Penetration Tester<br>🚀 Building my cybersecurity journey one project at a time
+# Atharva 👋
 
+```c
+while(!success) {
+    learn();
+    build();
+    improve();
+}
+```
 
-## 🌐 Socials:
-[![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://instagram.com/atharvamanitripathii) [![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?logo=YouTube&logoColor=white)](https://youtube.com/@UCvLvXnK7SyKlFtgMSXiOUeQ) [![email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:atharvamanitripathitripathi@gmail.com) 
+## About Me
 
-# 💻 Tech Stack:
-![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white) ![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi) ![SQLite](https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white) ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white) ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white) ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white) ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
+I'm Atharva, a Class 11 student from India currently learning Computer Science from the ground up.
 
-### ✍️ Random Dev Quote
-![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical)
+My goal is simple:
+
+Build a strong foundation in programming, Linux, networking, and cybersecurity before starting my BCA journey.
+
+Currently spending my time learning C Programming, exploring Linux, and understanding how computers actually work behind the scenes.
+
+---
+
+## Currently Learning
+
+* C Programming
+* Linux (Ubuntu)
+* Git & GitHub
+* Computer Fundamentals
+
+---
+
+## Future Goals
+
+* Cybersecurity
+* Ethical Hacking
+* Security Research
+* Bug Bounty Hunting
+* Open Source Contributions
+
+---
+
+## Current Setup
+
+* Ubuntu Linux
+* Geany
+* GCC
+* Google Chrome
+* The C Programming Language (K&R)
+
+---
+
+## Philosophy
+
+I don't want to become a developer who only knows frameworks.
+
+I want to understand:
+
+* How memory works
+* How operating systems work
+* How networks work
+* How software works
+
+From the fundamentals.
+
+---
+
+## GitHub Journey
+
+This profile is a collection of projects, experiments, notes, and lessons from my learning journey.
+
+Every repository here represents something I have learned, built, broken, and fixed myself.
+
+---
+
+> Learning one line of code at a time.
+>
+> See you in the terminal.
