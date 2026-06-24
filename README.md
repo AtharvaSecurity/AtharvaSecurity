@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  💻 Python • 🐧 Ubuntu • 🔒 Cybersecurity
+  💻 Python • 🐧 Linux • 🔒 Cybersecurity
 </p>
 
 ---
@@ -21,7 +21,7 @@
 ### 🛠️ Tools
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge\&logo=python\&logoColor=white)
-![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge\&logo=ubuntu\&logoColor=white)
+![Linux](https://img.shields.io/badge/linux-E95420?style=for-the-badge\&logo=linux\&logoColor=white)
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge\&logo=git\&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge\&logo=github\&logoColor=white)
 
