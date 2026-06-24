@@ -14,7 +14,7 @@
 
 * 🎓 Class 11 Student
 * 🐍 Learning Python
-* 🐧 Ubuntu Linux User
+* 🐧 Linux User
 * 🔒 Interested in Cybersecurity
 * 🎯 Goal: BCA → Cybersecurity
 
