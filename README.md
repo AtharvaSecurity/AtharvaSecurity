@@ -19,7 +19,7 @@
 * 🎯 Goal: BCA → Cybersecurity
 
 ### 🛠️ Tools
-
+![C++](https://img.shields.io/badge/C++-3776AB?style=for-the-badge\&logo=cpp\&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge\&logo=python\&logoColor=white)
 ![Linux](https://img.shields.io/badge/linux-E95420?style=for-the-badge\&logo=linux\&logoColor=white)
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge\&logo=git\&logoColor=white)
