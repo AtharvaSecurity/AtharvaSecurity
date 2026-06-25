@@ -32,11 +32,4 @@
 * Git & GitHub
 * Computer Science Fundamentals
 
-```python
-while True:
-    learn()
-    build()
-    improve()
-```
-
 > Learning one step at a time 🚀
