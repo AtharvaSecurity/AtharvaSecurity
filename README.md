@@ -1,7 +1,7 @@
 <h1 align="center">Hi 👋, I'm Atharva</h1>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&center=true&vCenter=true&width=500&lines=C++;Cybersecurity+Enthusiast;Linux+User;Building+Strong+Foundations" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&center=true&vCenter=true&width=500&lines=Cpp;Cybersecurity+Enthusiast;Linux+User;Building+Strong+Foundations" alt="Typing SVG" />
 </p>
 
 <p align="center">
