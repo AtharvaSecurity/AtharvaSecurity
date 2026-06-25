@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  💻 Python • 🐧 Linux • 🔒 Cybersecurity
+  💻 C++ • 🐧 Linux • 🔒 Cybersecurity
 </p>
 
 ---
