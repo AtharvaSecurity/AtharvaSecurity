@@ -43,7 +43,7 @@
 
 <p align="center">
 
-<img src="https://skillicons.dev/icons?i=cpp,python,linux,git,github,vscode,bash" />
+<img src="https://skillicons.dev/icons?i=cpp,python,linux,git,github,vim,bash,Zed" />
 
 </p>
 
