@@ -4,6 +4,8 @@
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&center=true&vCenter=true&width=500&lines=Cpp;Cybersecurity+Enthusiast;Linux+User;Building+Strong+Foundations" alt="Typing SVG" />
 </p>
 
+#writeup
+![Blog](https://atharvasecurity.github.io/Blogss/)
 <p align="center">
   💻 C++ • 🐧 Linux • 🔒 Cybersecurity
 </p>
